@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room 77 — Couples-Only Lifestyle Events, Travel &amp; Podcast</title>
+<meta name="description" content="Room 77 with Lauren &amp; Richard — FLIRT 2027 and SIN 2026 lifestyle takeovers on Isla Mujeres, cash-back resort bookings at Desire and Temptation, and the Room 77 Podcast.">
+<meta name="theme-color" content="#070607">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-bg:#070607;
+  --color-surface:#141214;
+  --color-surface-2:#1b181b;
+  --color-text:#f4f1f2;
+  --color-accent:#fb187a;
+  --color-accent-600:#d90f66;
+  --color-accent-700:#a80c50;
+  --color-muted:color-mix(in srgb,var(--color-text) 82%,transparent);
+  --color-dim:color-mix(in srgb,var(--color-text) 62%,transparent);
+  --color-divider:color-mix(in srgb,var(--color-text) 20%,transparent);
+  --color-rule:color-mix(in srgb,var(--color-text) 82%,transparent);
+  --font-body:'Archivo',system-ui,-apple-system,sans-serif;
+  --font-display:'Archivo Black','Archivo',sans-serif;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--font-display);line-height:.9;letter-spacing:-.03em;text-wrap:balance}
+p{color:var(--color-muted)}
+::selection{background:var(--color-accent);color:#fff}
+
+.section{padding:clamp(56px,8vw,120px) clamp(16px,4vw,48px)}
+.inner{max-width:var(--max);margin:0 auto}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--color-accent);margin:0}
+.lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:var(--color-muted);max-width:60ch;text-wrap:pretty}
+.ghost{color:transparent;-webkit-text-stroke:2px color-mix(in srgb,var(--color-text) 84%,transparent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:800;font-size:16px;padding:16px 26px;border:2px solid transparent;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,color .18s,border-color .18s}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--color-accent);color:#fff}
+.btn-primary:hover{background:var(--color-accent-600);transform:translateY(-2px);color:#fff}
+.btn-secondary{border-color:var(--color-text);color:var(--color-text)}
+.btn-secondary:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.btn-invert{background:var(--color-bg);color:var(--color-text)}
+.btn-invert:hover{transform:translateY(-2px);color:var(--color-accent)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:28px;padding:20px clamp(16px,4vw,48px);background:linear-gradient(to bottom,color-mix(in srgb,var(--color-bg) 88%,transparent),transparent);backdrop-filter:blur(6px)}
+.nav .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:24px;letter-spacing:-.02em;margin-right:auto;color:#fff}
+.nav .brand img{height:44px;width:auto;object-fit:contain;display:block}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:600;color:#fff}
+.nav-links a:hover{color:var(--color-accent)}
+.nav-links a[aria-current]{color:var(--color-accent)}
+.nav-toggle{display:none;background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+
+/* hero */
+.home-hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.home-hero video,.home-hero>img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.7)}
+.home-hero .scrim{position:absolute;inset:0;background:linear-gradient(to top,var(--color-bg) 0%,color-mix(in srgb,var(--color-bg) 55%,transparent) 45%,transparent 80%)}
+.hero-body{position:relative;padding:0 clamp(16px,4vw,48px) clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+.hero-flag{display:flex;gap:12px;align-items:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--color-accent)}
+.hero-flag span.dot{width:10px;height:10px;background:var(--color-accent)}
+.hero-title{font-family:var(--font-display);font-size:clamp(96px,21vw,340px);line-height:.8;letter-spacing:-.05em;margin:12px 0 0-.04em;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .08em}
+.hero-title .yr{-webkit-text-stroke:2px color-mix(in srgb,var(--color-text) 84%,transparent);color:transparent;font-size:.55em}
+.hero-aside{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding-bottom:.3em}
+.hero-art{width:clamp(140px,16vw,240px);aspect-ratio:1;object-fit:cover;border:2px solid var(--color-text)}
+.hero-facts{position:relative;margin:0 clamp(16px,4vw,48px);border-top:2px solid var(--color-text);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 24px;padding:16px 0 clamp(24px,4vw,48px);font-weight:800;font-size:clamp(15px,1.3vw,20px)}
+
+/* ticker */
+.ticker{border-top:2px solid var(--color-rule);border-bottom:2px solid var(--color-rule);overflow:hidden;padding:14px 0;white-space:nowrap}
+.ticker-track{display:inline-flex;align-items:center;font-family:var(--font-display);font-size:clamp(18px,2vw,26px);letter-spacing:-.01em;animation:r77-ticker 40s linear infinite;will-change:transform}
+.ticker-track span{padding:0 24px}
+.ticker-track b{color:var(--color-accent)}
+@keyframes r77-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* travel desk — FIXED two-column body (no blank right column) */
+.sec-head-row{display:flex;gap:24px;align-items:baseline;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,44px)}
+.sec-head-row .num{font-family:var(--font-display);font-size:14px;color:var(--color-accent)}
+.sec-head-row h2{font-size:clamp(44px,6.5vw,100px);line-height:.92;letter-spacing:-.04em;margin:0;max-width:16ch}
+.sec-head-row .lead{margin:0}
+.travel-body{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.resort-list{border-top:2px solid var(--color-text)}
+.resort-row{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;padding:22px 0;border-bottom:2px solid var(--color-rule);color:var(--color-text)}
+.resort-row:hover{color:var(--color-accent)}
+.resort-row .r-name{display:block;font-family:var(--font-display);font-size:clamp(24px,2.6vw,38px);line-height:1.05;letter-spacing:-.03em}
+.resort-row .r-meta{display:block;font-size:14px;margin-top:6px;color:var(--color-muted)}
+.resort-row .r-cta{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.cashpanel{display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:var(--color-accent);color:var(--color-bg);padding:clamp(22px,2.4vw,34px);min-height:340px}
+.cashpanel .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.cashpanel .big{font-family:var(--font-display);font-size:clamp(36px,4.5vw,64px);line-height:.95;letter-spacing:-.03em;margin-top:12px;text-wrap:balance}
+.cashpanel p{color:var(--color-bg);font-size:16px;line-height:1.45;max-width:40ch}
+
+/* pink podcast statement */
+.pink{background:var(--color-accent);color:var(--color-bg)}
+.pink .eyebrow{color:var(--color-bg)}
+.pod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:end}
+.pod-copy{display:flex;flex-direction:column;gap:24px;min-width:0}
+.pod-copy h2{font-size:clamp(28px,4vw,56px);line-height:1;margin:12px 0 0;color:#fff}
+.pod-copy p{color:color-mix(in srgb,var(--color-bg) 84%,transparent);font-size:clamp(17px,1.4vw,21px);line-height:1.4;max-width:46ch;text-wrap:pretty}
+.pod-play{display:flex;align-items:center;gap:20px;background:var(--color-bg);color:var(--color-text);padding:16px 20px}
+.pod-play .ic{width:56px;height:56px;flex:none;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center}
+.pod-play .ic svg{width:22px;height:22px;fill:currentColor}
+.pod-play .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);font-weight:700}
+.pod-links{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.pod-links a{color:var(--color-bg)}
+.pod-photo{min-width:0;align-self:stretch;position:relative;overflow:hidden;background:var(--color-bg);min-height:360px}
+.pod-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* membership */
+.mem-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(24px,3vw,40px)}
+.mem-head h2{font-size:clamp(48px,8vw,132px);line-height:.85;letter-spacing:-.05em;margin:12px 0 0 -.04em}
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border-top:2px solid var(--color-text)}
+.mem-cell{padding:20px;border-bottom:2px solid var(--color-rule);border-left:1px solid var(--color-divider)}
+.mem-cell:first-child{padding-left:0;border-left:0}
+.mem-cell .n{font-family:var(--font-display);font-size:13px;color:var(--color-accent)}
+.mem-cell .t{font-weight:800;font-size:20px;margin-top:8px}
+.mem-cell .d{font-size:15px;margin-top:4px;color:var(--color-muted)}
+
+/* SIN feature */
+.sin{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden}
+.sin>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 40%;filter:brightness(.75)}
+.sin .scrim{position:absolute;inset:0;background:linear-gradient(to top,var(--color-bg),transparent 70%)}
+.sin-body{position:relative;width:100%;padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px) clamp(24px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:end}
+.sin-body h2{font-size:clamp(72px,14vw,220px);line-height:.85;letter-spacing:-.05em;margin:8px 0 0 -.04em}
+.sin-cta{display:flex;flex-direction:column;gap:16px;align-items:flex-start;border-top:2px solid var(--color-text);padding-top:16px}
+
+/* guest reviews */
+.rvw-spot{max-width:52rem;margin:0 auto;text-align:center;min-height:15rem;display:flex;flex-direction:column;justify-content:center}
+.rvw-spot blockquote{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.03em;transition:opacity .5s ease,transform .5s ease}
+.rvw-spot blockquote .text-accent{color:var(--color-accent)}
+.rvw-attr{margin-top:1.75rem;font-size:.9rem;color:var(--color-muted);transition:opacity .5s ease}
+.rvw-attr strong{color:var(--color-text);font-weight:800}
+.rvw-attr .rvw-sep{color:var(--color-dim);margin:0 .5rem}
+.rvw-fading blockquote,.rvw-fading .rvw-attr{opacity:0;transform:translateY(8px)}
+.rvw-dots{display:flex;gap:.5rem;justify-content:center;margin-top:2.25rem}
+.rvw-dots button{width:1.75rem;height:3px;border:0;background:rgba(244,241,242,.18);cursor:pointer;transition:background .3s;padding:0}
+.rvw-dots button.rvw-on{background:var(--color-accent)}
+.rvw-dots button:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+.rvw-mq-wrap{margin-top:4.5rem;position:relative}
+.rvw-mq-wrap::before,.rvw-mq-wrap::after{content:"";position:absolute;top:0;bottom:0;width:8rem;z-index:2;pointer-events:none}
+.rvw-mq-wrap::before{left:0;background:linear-gradient(to right,var(--color-bg),transparent)}
+.rvw-mq-wrap::after{right:0;background:linear-gradient(to left,var(--color-bg),transparent)}
+.rvw-mq{display:flex;gap:.75rem;width:max-content;animation:rvw-drift 45s linear infinite}
+.rvw-mq-wrap:hover .rvw-mq{animation-play-state:paused}
+@keyframes rvw-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rvw-chip{background:var(--color-surface);border:1px solid var(--color-divider);padding:.9rem 1.25rem;width:17rem;flex-shrink:0}
+.rvw-chip p{font-size:.82rem;line-height:1.5;color:var(--color-muted);margin:0}
+.rvw-chip span{display:block;margin-top:.5rem;font-size:.7rem;color:var(--color-dim)}
+.rvw-cta{text-align:center;margin-top:3.5rem}
+
+/* newsletter */
+.loop{background:var(--color-accent);color:var(--color-bg)}
+.loop .inner{max-width:52rem;margin:0 auto;text-align:center}
+.loop .eyebrow{color:var(--color-bg)}
+.loop h2{font-size:clamp(38px,5vw,84px);line-height:.92;margin:14px 0 18px;color:#fff}
+.loop p{color:color-mix(in srgb,var(--color-bg) 84%,transparent);font-size:18px;margin-bottom:32px}
+.loop form{display:flex;gap:12px;max-width:30rem;margin:0 auto;flex-wrap:wrap}
+.loop input{flex:1;min-width:200px;background:var(--color-bg);border:2px solid var(--color-bg);color:var(--color-text);padding:15px 18px}
+.loop input::placeholder{color:var(--color-dim)}
+.loop input:focus{outline:none;border-color:var(--color-bg);box-shadow:0 0 0 3px rgba(7,6,7,.25)}
+.loop button{background:var(--color-bg);color:var(--color-text);border:0;font-weight:800;padding:15px 26px;cursor:pointer;white-space:nowrap;transition:transform .18s,color .18s}
+.loop button:hover{transform:translateY(-2px);color:var(--color-accent)}
+.loop .msg{font-size:14px;margin-top:16px;min-height:1.2em}
+.loop .msg.ok{color:var(--color-bg)}
+.loop .msg.err{color:#3a0016}
+.loop .small{font-size:12px;color:color-mix(in srgb,var(--color-bg) 70%,transparent);margin-top:14px}
+
+/* footer */
+.footer{border-top:2px solid var(--color-rule);padding:clamp(48px,6vw,72px) clamp(16px,4vw,48px) 40px}
+.footer-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px}
+.footer .brand-col a{font-family:var(--font-display);font-size:22px;letter-spacing:-.02em}
+.footer .brand-col a .text-accent{color:var(--color-accent)}
+.footer .brand-col p{margin-top:16px;font-size:14px;color:var(--color-muted);max-width:34ch;line-height:1.6}
+.footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--color-dim);margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:11px}
+.footer li a{font-size:14px;color:var(--color-muted)}
+.footer li a:hover{color:var(--color-accent)}
+.footer-bottom{max-width:var(--max);margin:44px auto 0;padding-top:24px;border-top:2px solid var(--color-divider);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:12px;color:var(--color-dim)}
+.footer-bottom .links{display:flex;gap:24px}
+.footer-bottom .links a{font-size:12px;color:var(--color-dim)}
+.footer-bottom .links a:hover{color:var(--color-muted)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:fixed;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--color-bg);border-top:1px solid var(--color-divider);padding:8px 0}
+  .nav-links.open a{padding:14px clamp(16px,4vw,48px);border-bottom:1px solid var(--color-divider)}
+  .nav-toggle{display:block}
+  .travel-body{grid-template-columns:1fr}
+  .hero-body{grid-template-columns:1fr}
+  .hero-aside{flex-direction:row;align-items:flex-end;justify-content:space-between;width:100%}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .hero-aside{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/concept-b/" class="brand"><img src="/concept-b/assets/logo-77-events.png" alt="Room 77 Events"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-links" id="navlinks">
+    <a href="/concept-b/travel/">Book Resorts &amp; Cruises</a>
+    <a href="/concept-b/podcast/">Podcast</a>
+    <a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a>
+    <a href="/concept-b/sin/">SIN 2026</a>
+    <a href="/concept-b/contact/">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="home-hero" id="hero">
+    <video autoplay muted loop playsinline poster="assets/isla-77-aerial.jpeg" src="assets/wave-bg.mp4"></video>
+    <div class="scrim"></div>
+    <div class="hero-body">
+      <div style="min-width:0">
+        <div class="hero-flag"><span class="dot"></span>Isla Mujeres takeover · Couples only*</div>
+        <h1 class="hero-title">FLIRT<span class="yr">2027</span></h1>
+      </div>
+      <div class="hero-aside">
+        <img class="hero-art" src="assets/flirt27.png" alt="FLIRT 2027 key art">
+        <a class="btn btn-primary" href="https://77lifestyle.com/book.html?event=flirt-2027" style="padding:20px 32px;font-size:18px;min-width:220px">Book Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
+    </div>
+    <div class="hero-facts">
+      <span>Feb 15–20, 2027</span><span>5 nights</span><span>All-inclusive</span><span>Isla Mujeres, Mexico</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <!-- TRAVEL DESK -->
+  <section class="section" id="travel">
+    <div class="inner">
+      <div class="sec-head-row">
+        <span class="num">01</span>
+        <h2>The Travel Desk</h2>
+        <p class="lead" style="max-width:44ch">We book the lifestyle resorts we actually go to. Book through us and part of our commission comes back to you.</p>
+      </div>
+      <div class="travel-body">
+        <div class="resort-list">
+          <a class="resort-row" href="/concept-b/travel/">
+            <span><span class="r-name">Temptation</span><span class="r-meta">Cancún, MX · Topless-optional, playful</span></span>
+            <span class="r-cta" style="color:var(--color-accent)">Cash back <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+          </a>
+          <a class="resort-row" href="/concept-b/travel/">
+            <span><span class="r-name">Desire Resorts &amp; Cruises</span><span class="r-meta">Riviera Maya, Pearl + at sea · Couples-only*, clothing-optional</span></span>
+            <span class="r-cta" style="color:var(--color-accent)">Cash back <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+          </a>
+          <a class="resort-row" href="/concept-b/travel/">
+            <span><span class="r-name">Hedonism II</span><span class="r-meta">Negril, Jamaica · The original. Loud.</span></span>
+            <span class="r-cta" style="color:var(--color-muted)">Book <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+          </a>
+        </div>
+        <div class="cashpanel">
+          <div>
+            <div class="k">The hook</div>
+            <div class="big">Cash back on your booking.</div>
+          </div>
+          <p>Temptation, and Desire Resorts and Cruises. Same room, same rate as booking direct — then get paid by theguestbook.com or straight out of our commission. We book Hedonism II too, without the cash back.</p>
+          <a class="btn btn-invert" href="/concept-b/travel/" style="align-self:flex-start">Start a resort booking
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST (pink) -->
+  <section class="section pink" id="podcast">
+    <div class="inner pod-grid">
+      <div class="pod-copy">
+        <div>
+          <p class="eyebrow">Richard + Lauren · Room 77 Podcast</p>
+          <h2>The sit-com of lifestyle podcasts.</h2>
+        </div>
+        <p>Marriage, swinging, Desire, travel, sex, bad decisions, television tangents, and the everyday parts of our life most couples would never put on a microphone. Listen long enough and you are basically in the group chat.</p>
+        <a class="pod-play" href="/concept-b/podcast/">
+          <span class="ic"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></span>
+          <span style="min-width:0"><span class="lbl">Latest · Ep. 108</span><span style="display:block;font-weight:800;font-size:18px">Listen to the latest episode</span></span>
+          <span style="margin-left:auto;display:flex;gap:4px;align-items:flex-end;height:24px"><span style="width:4px;height:10px;background:var(--color-text)"></span><span style="width:4px;height:22px;background:var(--color-text)"></span><span style="width:4px;height:14px;background:var(--color-text)"></span><span style="width:4px;height:20px;background:var(--color-text)"></span></span>
+        </a>
+        <div class="pod-links"><a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener">Apple Podcasts</a><a href="https://open.spotify.com/show/1m2lnjTbXnfhor9QTRzE7g" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener">YouTube</a><a href="/concept-b/podcast/">All episodes &rarr;</a></div>
+      </div>
+      <div class="pod-photo"><img src="assets/richard-lauren.jpg" alt="Richard and Lauren together"></div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="section" id="membership">
+    <div class="inner">
+      <div class="mem-head">
+        <div>
+          <p class="eyebrow">The private community</p>
+          <h2>BECOME A <span class="ghost">MEMBER</span></h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+          <p class="lead" style="max-width:40ch">The private side of Room 77 — our own community, where you talk to Lauren and Richard directly every day — plus event discounts, priority access and members-only content.</p>
+          <a class="btn btn-primary" href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a member
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <div class="mem-grid">
+        <div class="mem-cell"><div class="n">01</div><div class="t">A private community</div><div class="d">Open to anyone in the lifestyle, not just couples.</div></div>
+        <div class="mem-cell"><div class="n">02</div><div class="t">Talk to us daily</div><div class="d">Lauren and Richard are in the chat every day.</div></div>
+        <div class="mem-cell"><div class="n">03</div><div class="t">Discounts | Priority access</div><div class="d">Members pay less and book before anyone else.</div></div>
+        <div class="mem-cell"><div class="n">04</div><div class="t">Bonus content</div><div class="d">Members-only episodes and event recaps.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIN 2026 -->
+  <section class="sin" id="sin">
+    <img src="assets/sin-77-screen.jpeg" alt="The 77 screen lit up over the rooftop pool at night">
+    <div class="scrim"></div>
+    <div class="sin-body">
+      <div>
+        <p class="eyebrow">First, this October</p>
+        <h2>SIN <span class="ghost">2026</span></h2>
+      </div>
+      <div class="sin-cta">
+        <span style="font-weight:800;font-size:20px">Isla Mujeres · October 2026</span>
+        <a class="btn btn-secondary" href="/concept-b/sin/">SIN 2026 details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUEST REVIEWS -->
+  <section class="section" id="reviews" style="overflow:hidden">
+    <div class="inner">
+      <p class="eyebrow" style="text-align:center;margin-bottom:1rem">Guest Reviews</p>
+      <div class="rvw-spot" id="rvw-spot">
+        <blockquote id="rvw-quote">&ldquo;The vibe they&rsquo;ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we&rsquo;ve ever encountered.&rdquo;</blockquote>
+        <p class="rvw-attr" id="rvw-attr"><strong>RnLCouple</strong><span class="rvw-sep">&bull;</span>FLIRT 2026<span class="rvw-sep">&bull;</span>Sold Out</p>
+      </div>
+      <div class="rvw-dots" id="rvw-dots" aria-label="Review navigation"></div>
+      <div class="rvw-mq-wrap" aria-hidden="true"><div class="rvw-mq" id="rvw-mq"></div></div>
+      <div class="rvw-cta">
+        <a href="/concept-b/flirt/" class="btn btn-primary">Join Us at FLIRT 2027
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY IN THE LOOP (pink) -->
+  <section class="section loop" id="loop">
+    <div class="inner">
+      <p class="eyebrow">Stay in the Loop</p>
+      <h2>Never Miss a Thing.</h2>
+      <p>Event announcements, podcast drops, and exclusive offers. No spam, ever.</p>
+      <form id="newsletter-form">
+        <input id="newsletter-email" type="email" placeholder="you@email.com" required>
+        <button type="submit" id="newsletter-btn">Subscribe</button>
+      </form>
+      <p id="newsletter-msg" class="msg"></p>
+      <p class="small">We respect your inbox. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="brand-col">
+      <a href="/concept-b/">ROOM <span class="text-accent">77</span></a>
+      <p>Couples-only* lifestyle events, travel experiences, and real conversations — with Lauren &amp; Richard.</p>
+    </div>
+    <div>
+      <h4>Events</h4>
+      <ul>
+        <li><a href="/concept-b/flirt/">FLIRT 2027</a></li>
+        <li><a href="/concept-b/sin/">SIN 2026</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/concept-b/podcast/">Podcast</a></li>
+        <li><a href="/concept-b/travel/">Book Resorts &amp; Cruises</a></li>
+        <li><a href="https://77lifestyle.com/">Shop</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a></li>
+        <li><a href="/concept-b/contact/">Contact</a></li>
+        <li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Patreon</a></li>
+      </ul>
+    </div>
+  </div>
+    <div class="social"><a href="https://www.instagram.com/room77podcast/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/touchedby.lnr.9/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a><a href="https://x.com/room77podcast" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a><a href="https://www.tiktok.com/@room77_lauren" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.6 3.7 3.8v2.5c-1.2.1-2.3-.3-3.6-1v5.6c0 4.6-3.4 7.1-6.9 6.3-3.8-.9-5-4.9-3-7.8 1.2-1.7 3.2-2.4 5.3-2v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.2 1-2.1 2.3.1 1.4 1.4 2.2 2.7 1.9 1.1-.3 1.6-1.2 1.6-2.4V3h3.5z"/></svg></a><a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6.2 3.3-6.2 3.3z"/></svg></a><a href="https://open.spotify.com/show/1m2lnjTbXnfhor9QTRzE7g" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.3-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.1-1.2a.8.8 0 1 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.5.7.1 1zm.1-2.8C14.7 8.1 9.4 7.9 6.3 8.8a.9.9 0 1 1-.5-1.8c3.6-1.1 9.4-.9 13.1 1.3a.9.9 0 1 1-.9 1.6z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-6 18v-2.3a8 8 0 1 1 12 0V20A10 10 0 0 0 12 2z"/><circle cx="12" cy="9" r="2.4"/><path d="M9.7 13.2a2.3 2.3 0 0 1 4.6 0l-.5 4.6a1.8 1.8 0 0 1-3.6 0l-.5-4.6z"/></svg></a></div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Room 77 · room77life.com</p>
+    <div class="links">
+      <a href="/concept-b/contact/">Privacy</a>
+      <a href="/concept-b/contact/">Terms</a>
+      <a href="/concept-b/contact/">Your Privacy Choices</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* mobile nav */
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');
+  if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}
+})();
+
+/* hero video autoplay guard */
+(function(){var v=document.querySelector('.home-hero video');if(!v)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+
+/* ticker */
+(function(){
+  var el=document.getElementById('ticker');if(!el)return;
+  var items=['SIN 2026','Isla Mujeres','October 2026','FLIRT 2027','Feb 15–20','Couples only*','Cash back on resort bookings','Room 77 Podcast · 108 episodes'];
+  function build(){return items.map(function(t){return '<span>'+t+'</span><b>&bull;</b>';}).join('');}
+  el.innerHTML=build()+build();
+})();
+
+/* guest reviews rotator + marquee */
+(function(){
+  var featured=[
+    {q:'“The vibe they’ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we’ve ever encountered.”',a:'<strong>RnLCouple</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“Not too much of anything, but <span class="text-accent">just enough of everything</span>.”',a:'<strong>HowieDewit</strong><span class="rvw-sep">•</span>Flirtation 2024<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“We were new and nervous. Never should have worried — <span class="text-accent">the most welcoming group</span> you can imagine.”',a:'<strong>FunCouple</strong><span class="rvw-sep">•</span>FLIRT 2025<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“The podcast became a <span class="text-accent">guidebook to our journey</span>. With every episode, our fears subsided.”',a:'<strong>VelvetVibes</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'}];
+  var chips=[
+    ['Best event yet — and nope, not making it up.','Ninetyfour · FLIRT 2026'],
+    ['Even the food was on point. Signed up for the next two!','EasyEnergy · FLIRT 2026'],
+    ['The DJs were the best we’ve ever had at an event.','Sens8Couple · SIN 2025'],
+    ['A fully loaded beach party under the stars.','Trius · FLIRT 2026'],
+    ['Many couples booked the next event before heading home.','RnLCouple · FLIRT 2026'],
+    ['They keep it personal and try to know every guest.','TomLydia · FLIRT 2025'],
+    ['Everyone was so friendly and welcoming.','2New2Quit · FLIRT 2025'],
+    ['Hands down the best takeover. Well organized, awesome people.','Fun4Us21 · SIN 2024']];
+  var q=document.getElementById('rvw-quote'),a=document.getElementById('rvw-attr'),spot=document.getElementById('rvw-spot'),dots=document.getElementById('rvw-dots'),idx=0,timer;
+  if(!q)return;
+  featured.forEach(function(f,i){var b=document.createElement('button');b.setAttribute('aria-label','Review '+(i+1));if(i===0)b.className='rvw-on';b.onclick=function(){show(i);restart();};dots.appendChild(b);});
+  function show(i){idx=i;spot.classList.add('rvw-fading');setTimeout(function(){q.innerHTML=featured[i].q;a.innerHTML=featured[i].a;spot.classList.remove('rvw-fading');var ds=dots.children;for(var k=0;k<ds.length;k++){ds[k].className=k===i?'rvw-on':'';}},500);}
+  function restart(){clearInterval(timer);timer=setInterval(function(){show((idx+1)%featured.length);},6000);}
+  restart();
+  var m=document.getElementById('rvw-mq');
+  var h=chips.map(function(c){return '<div class="rvw-chip"><p>“'+c[0]+'”</p><span>'+c[1]+'</span></div>';}).join('');
+  m.innerHTML=h+h;
+})();
+
+/* newsletter (posts to admin.room77life.com) */
+(function(){
+  var s=document.getElementById('newsletter-form'),a=document.getElementById('newsletter-email'),n=document.getElementById('newsletter-btn'),e=document.getElementById('newsletter-msg');
+  if(!s)return;
+  s.addEventListener('submit',async function(o){o.preventDefault();n.disabled=!0;n.textContent='Subscribing…';e.className='msg';
+    try{var t=await fetch('https://admin.room77life.com/api/newsletter/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:a.value})});
+      if(t.ok){e.textContent="You're in! Check your inbox for updates.";e.className='msg ok';s.reset();}
+      else{var r=await t.json().catch(function(){return {};});throw new Error(r.error||'Something went wrong');}}
+    catch(t){e.textContent=t.message||'Something went wrong. Please try again.';e.className='msg err';}
+    finally{n.disabled=!1;n.textContent='Subscribe';}});
+})();
+</script>
+</body>
+</html>

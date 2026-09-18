@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLIRT 2027 — Room 77 · Isla Mujeres, February 15–20, 2027</title>
+<meta name="description" content="FLIRT 2027 — our 16th Room 77 event: a five-night, all-inclusive, couples-only takeover on Isla Mujeres, February 15–20, 2027. Suites from $3,077 per room, all-inclusive for two, five nights. Book now.">
+<meta name="theme-color" content="#070607">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concept-b/assets/site.css">
+<style>
+  .rooms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(16px,2vw,28px);max-width:var(--max);margin:0 auto}
+  .room-card{background:var(--color-surface);border:1px solid var(--color-divider);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+  .room-card:hover{border-color:var(--color-accent);transform:translateY(-3px)}
+  .room-card .ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .room-card .rc-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .room-card .rc-name{font-family:var(--font-display);font-size:clamp(19px,1.5vw,23px);letter-spacing:-.02em;line-height:1.06}
+  .room-card .rc-meta{font-size:13px;color:var(--color-muted)}
+  .room-card .rc-price{margin-top:auto;padding-top:12px;font-weight:800;font-size:22px;color:var(--color-accent)}
+  .room-card .rc-price small{display:block;font-weight:600;font-size:12px;color:var(--color-dim);margin-top:3px}
+  .soldout-rows{max-width:var(--max);margin:clamp(18px,2vw,28px) auto 0;border-top:2px solid var(--color-rule)}
+  .soldout-rows .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--color-divider);opacity:.55}
+  .soldout-rows .r-name{font-family:var(--font-display);font-size:clamp(17px,1.5vw,20px);letter-spacing:-.02em}
+  .soldout-rows .r-meta{display:block;font-size:13px;color:var(--color-muted);margin-top:4px}
+  .soldout-rows .r-cta{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted);white-space:nowrap}
+  .page-hero.has-img>video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55) grayscale(.15);z-index:0}
+  .promo-wrap{display:flex;justify-content:center}
+  .promo-video{width:min(360px,84vw);aspect-ratio:9/16;background:#000;border:1px solid var(--color-divider);border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .promo-video video{width:100%;height:100%;object-fit:cover;display:block}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/concept-b/" class="brand"><img src="/concept-b/assets/logo-77-events.png" alt="Room 77 Events"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-links" id="navlinks">
+    <a href="/concept-b/travel/">Book Resorts &amp; Cruises</a>
+    <a href="/concept-b/podcast/">Podcast</a>
+    <a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a>
+    <a href="/concept-b/flirt/" aria-current="page">FLIRT 2027</a>
+    <a href="/concept-b/sin/">SIN 2026</a>
+    <a href="/concept-b/contact/">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <header class="page-hero has-img">
+    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="/concept-b/assets/flirt-2027-hero-poster.jpg" aria-hidden="true">
+      <source src="/concept-b/assets/flirt-2027-hero-loop.webm" type="video/webm">
+      <source src="/concept-b/assets/flirt-2027-hero-loop.mp4" type="video/mp4">
+    </video>
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Isla Mujeres takeover · Couples only*</p>
+      <h1>FLIRT <span class="ghost">2027</span></h1>
+      <p class="lead">Five nights, one island, and the whole hotel to ourselves. FLIRT is our 16th event and the flagship Room 77 takeover — all-inclusive days, themed nights, and the crowd our reviews keep raving about.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://77lifestyle.com/book.html?event=feb-2027">Book Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <a class="btn btn-secondary" href="#rooms">Rooms &amp; Rates</a>
+      </div>
+      <div class="factbar">
+        <span>Feb 15–20, 2027</span><span>5 nights</span><span>All-inclusive</span><span>Isla Mujeres, MX</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <!-- WHAT IT IS -->
+  <section class="section">
+    <div class="inner sec-head">
+      <div>
+        <p class="eyebrow">The full experience</p>
+        <h2>Everything included. Nothing ordinary.</h2>
+      </div>
+      <p class="lead">One price, five nights, a whole hotel of people you&rsquo;ll want to know. Food, drinks, parties, and the theme nights Room 77 is known for — all part of the package.</p>
+    </div>
+    <div class="inner cards">
+      <div class="card"><span class="n">01</span><h3>All-inclusive</h3><p>Meals, top-shelf drinks, and every Room 77 party and daytime event — all in.</p></div>
+      <div class="card"><span class="n">02</span><h3>Complete takeover</h3><p>The entire hotel is ours. No outside guests, no wondering who&rsquo;s who — just our people.</p></div>
+      <div class="card"><span class="n">03</span><h3>Theme nights + DJs</h3><p>The parties our guests book the next event over. Beach nights, dance floors, and the best DJs we&rsquo;ve had.</p></div>
+      <div class="card"><span class="n">04</span><h3>Couples only*</h3><p>A warm, welcoming crowd — first-timers and regulars alike. You&rsquo;ll fit right in.</p></div>
+    </div>
+  </section>
+
+  <!-- PROMO VIDEO -->
+  <section class="section" style="border-top:2px solid var(--color-divider)">
+    <div class="inner sec-head">
+      <div>
+        <p class="eyebrow">Watch</p>
+        <h2>See FLIRT in motion.</h2>
+      </div>
+      <p class="lead">Thirty seconds of what five nights on Isla Mujeres actually feels like. Press play.</p>
+    </div>
+    <div class="inner promo-wrap">
+      <div class="promo-video">
+        <video controls preload="none" playsinline poster="/concept-b/assets/flirt-2027-promo-poster.jpg">
+          <source src="/concept-b/assets/flirt-2027-promo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS & RATES -->
+  <section class="section" id="rooms" style="border-top:2px solid var(--color-divider)">
+    <div class="inner sec-head">
+      <div>
+        <p class="eyebrow">Rooms &amp; Rates</p>
+        <h2>Your suite awaits.</h2>
+      </div>
+      <p class="lead">Prices are per room, all-inclusive for two, for all five nights. Ask about the &ldquo;Oversized King Bed&rdquo; — a concept by Room 77. Rates start at <strong style="color:var(--color-text)">$3,077* per room</strong>.</p>
+    </div>
+    <div class="inner rooms-grid">
+      <a class="room-card" href="https://77lifestyle.com/book.html?event=feb-2027">
+        <img class="ph" src="/concept-b/assets/flirt-ocean.webp" alt="Jr. Suite Ocean View – Oversized King" loading="lazy">
+        <div class="rc-body">
+          <span class="rc-name">Jr. Suite Ocean View - Oversized King</span>
+          <span class="rc-meta">430 sq ft · Ocean view · Oversized King</span>
+          <span class="rc-price">$3,577 <small>per room · 5 nights, all-inclusive for 2</small></span>
+        </div>
+      </a>
+      <a class="room-card" href="https://77lifestyle.com/book.html?event=feb-2027">
+        <img class="ph" src="/concept-b/assets/flirt-oversized-king.jpeg" alt="Jr. Suite Pool View – Oversized King" loading="lazy">
+        <div class="rc-body">
+          <span class="rc-name">Jr. Suite Pool View - Oversized King</span>
+          <span class="rc-meta">430 sq ft · Pool view · Oversized King</span>
+          <span class="rc-price">$3,277 <small>per room · 5 nights, all-inclusive for 2</small></span>
+        </div>
+      </a>
+      <a class="room-card" href="https://77lifestyle.com/book.html?event=feb-2027">
+        <img class="ph" src="/concept-b/assets/flirt-oversized-king.jpeg" alt="Jr. Suite Lagoon View – Oversized King" loading="lazy">
+        <div class="rc-body">
+          <span class="rc-name">Jr. Suite Lagoon View - Oversized King</span>
+          <span class="rc-meta">430 sq ft · Lagoon / garden view · Oversized King</span>
+          <span class="rc-price">$3,077 <small>per room · 5 nights, all-inclusive for 2</small></span>
+        </div>
+      </a>
+      <a class="room-card" href="https://77lifestyle.com/book.html?event=feb-2027">
+        <img class="ph" src="/concept-b/assets/flirt-1br.webp" alt="1 Bedroom Suite – King" loading="lazy">
+        <div class="rc-body">
+          <span class="rc-name">1 Bedroom Suite - King</span>
+          <span class="rc-meta">1,230 sq ft · Living · dining · kitchen · pool view</span>
+          <span class="rc-price">$4,377 <small>per room · 5 nights, all-inclusive for 2</small></span>
+        </div>
+      </a>
+    </div>
+    <div class="inner soldout-rows">
+      <div class="row">
+        <span><span class="r-name">Jr. Suite Pool View - King</span><span class="r-meta">430 sq ft · Pool view · King bed</span></span>
+        <span class="r-cta">Sold out</span>
+      </div>
+      <div class="row">
+        <span><span class="r-name">Jr. Suite Lagoon View - King</span><span class="r-meta">430 sq ft · Lagoon view · King bed</span></span>
+        <span class="r-cta">Sold out</span>
+      </div>
+    </div>
+    <p style="max-width:var(--max);margin:22px auto 0;font-size:13px;color:var(--color-dim)">Prices are per room, all-inclusive for 2 people, for 5 nights. Final pricing is confirmed at booking; payment plans available.</p>
+    <p style="max-width:var(--max);margin:8px auto 0;font-size:13px;color:var(--color-dim)">*Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
+  </section>
+
+  <!-- BOOK BAND -->
+  <section class="section pink">
+    <div class="inner" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:end">
+      <div>
+        <p class="eyebrow">Feb 15–20, 2027</p>
+        <h2 style="font-size:clamp(38px,5.4vw,90px);line-height:.92;margin:14px 0 0">Lock in your suite.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+        <p style="font-size:clamp(17px,1.4vw,21px);line-height:1.45;margin:0;max-width:42ch">Secure your spot with a deposit and spread the rest over easy payments.</p>
+        <a class="btn btn-invert" href="https://77lifestyle.com/book.html?event=feb-2027">Book FLIRT 2027
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="brand-col">
+      <a href="/concept-b/">ROOM <span class="text-accent">77</span></a>
+      <p>Couples-only* lifestyle events, travel experiences, and real conversations — with Lauren &amp; Richard.</p>
+    </div>
+    <div><h4>Events</h4><ul><li><a href="/concept-b/flirt/">FLIRT 2027</a></li><li><a href="/concept-b/sin/">SIN 2026</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="/concept-b/podcast/">Podcast</a></li><li><a href="/concept-b/travel/">Book Resorts &amp; Cruises</a></li><li><a href="https://77lifestyle.com/">Shop</a></li></ul></div>
+    <div><h4>Connect</h4><ul><li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a></li><li><a href="/concept-b/contact/">Contact</a></li><li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Patreon</a></li></ul></div>
+  </div>
+    <div class="social"><a href="https://www.instagram.com/room77podcast/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/touchedby.lnr.9/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a><a href="https://x.com/room77podcast" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a><a href="https://www.tiktok.com/@room77_lauren" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.6 3.7 3.8v2.5c-1.2.1-2.3-.3-3.6-1v5.6c0 4.6-3.4 7.1-6.9 6.3-3.8-.9-5-4.9-3-7.8 1.2-1.7 3.2-2.4 5.3-2v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.2 1-2.1 2.3.1 1.4 1.4 2.2 2.7 1.9 1.1-.3 1.6-1.2 1.6-2.4V3h3.5z"/></svg></a><a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6.2 3.3-6.2 3.3z"/></svg></a><a href="https://open.spotify.com/show/1m2lnjTbXnfhor9QTRzE7g" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.3-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.1-1.2a.8.8 0 1 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.5.7.1 1zm.1-2.8C14.7 8.1 9.4 7.9 6.3 8.8a.9.9 0 1 1-.5-1.8c3.6-1.1 9.4-.9 13.1 1.3a.9.9 0 1 1-.9 1.6z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-6 18v-2.3a8 8 0 1 1 12 0V20A10 10 0 0 0 12 2z"/><circle cx="12" cy="9" r="2.4"/><path d="M9.7 13.2a2.3 2.3 0 0 1 4.6 0l-.5 4.6a1.8 1.8 0 0 1-3.6 0l-.5-4.6z"/></svg></a></div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Room 77 · room77life.com</p>
+    <div class="links"><a href="/concept-b/contact/">Privacy</a><a href="/concept-b/contact/">Terms</a><a href="/concept-b/contact/">Your Privacy Choices</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}})();
+(function(){var el=document.getElementById('ticker');if(!el)return;var items=['FLIRT 2027','Feb 15–20','5 nights','All-inclusive','Couples only*','Isla Mujeres','Oversized King','Book now'];function b(){return items.map(function(t){return '<span>'+t+'</span><b>&bull;</b>';}).join('');}el.innerHTML=b()+b();})();
+(function(){var v=document.querySelector('.page-hero video.hero-bg');if(!v)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room 77 Podcast — The Sit-Com of Lifestyle Podcasts</title>
+<meta name="description" content="Richard and Lauren share their real life — marriage, swinging, Desire, travel, events, and everything in between. Listen to Room 77, then let us help with your Desire or Temptation trip.">
+<meta name="theme-color" content="#070607">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-bg:#070607;
+  --color-surface:#141214;
+  --color-surface-2:#1b181b;
+  --color-text:#f4f1f2;
+  --color-accent:#fb187a;
+  --color-accent-600:#d90f66;
+  --color-accent-700:#a80c50;
+  --color-muted:color-mix(in srgb,var(--color-text) 82%,transparent);
+  --color-dim:color-mix(in srgb,var(--color-text) 62%,transparent);
+  --color-divider:color-mix(in srgb,var(--color-text) 20%,transparent);
+  --color-rule:color-mix(in srgb,var(--color-text) 82%,transparent);
+  --font-body:'Archivo',system-ui,-apple-system,sans-serif;
+  --font-display:'Archivo Black','Archivo',sans-serif;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--font-display);line-height:.9;letter-spacing:-.03em;text-wrap:balance}
+p{color:var(--color-muted)}
+::selection{background:var(--color-accent);color:#fff}
+
+.section{padding:clamp(64px,8vw,120px) clamp(16px,4vw,48px)}
+.inner{max-width:var(--max);margin:0 auto}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--color-accent);margin:0}
+.lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:var(--color-muted);max-width:60ch;text-wrap:pretty}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:800;font-size:16px;padding:16px 26px;border:2px solid transparent;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,color .18s,border-color .18s}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--color-accent);color:#fff}
+.btn-primary:hover{background:var(--color-accent-600);transform:translateY(-2px);color:#fff}
+.btn-secondary{border-color:var(--color-text);color:var(--color-text)}
+.btn-secondary:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.btn-invert{background:var(--color-bg);color:var(--color-text)}
+.btn-invert:hover{transform:translateY(-2px);color:var(--color-accent)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:28px;padding:20px clamp(16px,4vw,48px);background:linear-gradient(to bottom,color-mix(in srgb,var(--color-bg) 88%,transparent),transparent);backdrop-filter:blur(6px)}
+.nav .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:24px;letter-spacing:-.02em;margin-right:auto;color:#fff}
+.nav .brand img{height:44px;width:auto;object-fit:contain;display:block}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:600;color:#fff}
+.nav-links a:hover{color:var(--color-accent)}
+.nav-links a[aria-current]{color:var(--color-accent)}
+.nav-toggle{display:none;background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+
+/* hero */
+.hero{padding-top:clamp(120px,16vw,180px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(40px,6.6vw,92px);margin:16px 0 0}
+.hero .accent-word{color:var(--color-accent);font-style:italic;font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-.02em}
+.hero .lead{margin:26px 0 30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.platforms{display:flex;gap:14px 26px;flex-wrap:wrap;margin-top:28px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--color-dim)}
+.platforms span{color:var(--color-accent)}
+.hero-photo{position:relative;border:2px solid var(--color-text);overflow:hidden;aspect-ratio:4/5}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* rule ticker between sections */
+.ticker{border-top:2px solid var(--color-rule);border-bottom:2px solid var(--color-rule);overflow:hidden;padding:14px 0;white-space:nowrap}
+.ticker-track{display:inline-flex;align-items:center;font-family:var(--font-display);font-size:clamp(18px,2vw,26px);letter-spacing:-.01em;animation:r77-ticker 40s linear infinite;will-change:transform}
+.ticker-track span{padding:0 24px}
+.ticker-track b{color:var(--color-accent)}
+@keyframes r77-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* latest episode */
+.latest-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.play-card{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--color-surface-2),#0d0b0d);border:2px solid var(--color-rule);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.play-btn{width:88px;height:88px;border-radius:50%;background:var(--color-accent);display:grid;place-items:center;box-shadow:0 18px 60px rgba(251,24,122,.4);transition:transform .2s}
+.play-card:hover .play-btn{transform:scale(1.06)}
+.play-btn svg{width:34px;height:34px;fill:#fff;margin-left:5px}
+.latest-copy h2{font-size:clamp(28px,3.4vw,50px);margin:14px 0 18px;line-height:.98}
+.latest-copy .lead{margin-bottom:26px}
+.latest-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* pink statement */
+.statement{background:var(--color-accent);color:var(--color-bg)}
+.statement .inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:end}
+.statement .eyebrow{color:var(--color-bg)}
+.statement h2{font-size:clamp(38px,5.4vw,90px);line-height:.92;margin:14px 0 0}
+.statement p{color:color-mix(in srgb,var(--color-bg) 82%,transparent);font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:48ch;text-wrap:pretty}
+
+/* section header block */
+.sec-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 56px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head h2{font-size:clamp(36px,5vw,80px);line-height:.9;margin:12px 0 0;max-width:18ch}
+.sec-head .lead{align-self:flex-end}
+
+/* numbered episode cards */
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border-top:2px solid var(--color-text)}
+.ep-card{display:flex;flex-direction:column;gap:12px;padding:28px 24px 32px;border-bottom:2px solid var(--color-divider);border-left:1px solid var(--color-divider);transition:background .2s}
+.ep-card:first-child{border-left:0}
+.ep-card:hover{background:var(--color-surface)}
+.ep-num{font-family:var(--font-display);font-size:13px;color:var(--color-accent)}
+.ep-card h3{font-size:clamp(21px,2vw,27px);line-height:1.02;letter-spacing:-.02em}
+.ep-card p{font-size:15px;color:var(--color-muted);flex:1}
+.ep-card .go{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent)}
+
+/* desire */
+.desire-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4vw,64px);align-items:center}
+.desire-photo{border:2px solid var(--color-text);overflow:hidden;aspect-ratio:5/4}
+.desire-photo img{width:100%;height:100%;object-fit:cover}
+.desire-copy h2{font-size:clamp(32px,4vw,64px);line-height:.95;margin:14px 0 20px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.chips a{background:var(--color-surface);border:1px solid var(--color-divider);padding:16px 14px;text-align:center;font-weight:800;font-size:14px;transition:border-color .2s,background .2s}
+.chips a:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.inline-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+
+/* booking */
+.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,60px);align-items:start}
+.booking-copy h2{font-size:clamp(30px,3.6vw,56px);line-height:.98;margin:14px 0 20px}
+.quote-form{background:var(--color-surface);border:2px solid var(--color-rule);padding:clamp(24px,3vw,36px)}
+.quote-form h3{font-size:22px;margin-bottom:8px}
+.quote-form .note{font-size:14px;color:var(--color-dim);margin-bottom:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--color-muted)}
+.field input,.field select{width:100%;background:var(--color-bg);border:1px solid rgba(244,241,242,.22);color:var(--color-text);padding:13px 14px;transition:border-color .15s,box-shadow .15s}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23c6c2c4' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.field select option{background:var(--color-bg)}
+.field input::placeholder{color:var(--color-dim)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(251,24,122,.25)}
+.quote-form .btn{margin-top:22px;width:100%;justify-content:center}
+.quote-form .fineprint{font-size:12px;color:var(--color-dim);margin-top:14px;text-align:center}
+
+/* travel cards */
+.travel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
+.travel-card{background:var(--color-surface);border:1px solid var(--color-divider);padding:28px 24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
+.travel-card:hover{border-color:var(--color-accent);transform:translateY(-3px)}
+.travel-card h3{font-size:24px;letter-spacing:-.02em}
+.travel-card p{font-size:15px;color:var(--color-muted);flex:1}
+.travel-card .go{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent)}
+.fineprint-row{margin-top:22px;font-size:13px;color:var(--color-dim)}
+
+/* experience split */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature{border:2px solid var(--color-divider);background:var(--color-surface);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:16px}
+.feature h3{font-size:clamp(24px,2.6vw,34px);line-height:1}
+.feature p{font-size:16px;color:var(--color-muted);flex:1}
+
+/* guest reviews */
+.rvw-spot{max-width:52rem;margin:0 auto;text-align:center;min-height:15rem;display:flex;flex-direction:column;justify-content:center}
+.rvw-spot blockquote{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.03em;transition:opacity .5s ease,transform .5s ease}
+.rvw-spot blockquote .text-accent{color:var(--color-accent)}
+.rvw-attr{margin-top:1.75rem;font-size:.9rem;color:var(--color-muted);transition:opacity .5s ease}
+.rvw-attr strong{color:var(--color-text);font-weight:800}
+.rvw-attr .rvw-sep{color:var(--color-dim);margin:0 .5rem}
+.rvw-fading blockquote,.rvw-fading .rvw-attr{opacity:0;transform:translateY(8px)}
+.rvw-dots{display:flex;gap:.5rem;justify-content:center;margin-top:2.25rem}
+.rvw-dots button{width:1.75rem;height:3px;border:0;background:rgba(244,241,242,.18);cursor:pointer;transition:background .3s;padding:0}
+.rvw-dots button.rvw-on{background:var(--color-accent)}
+.rvw-dots button:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+.rvw-mq-wrap{margin-top:4.5rem;position:relative}
+.rvw-mq-wrap::before,.rvw-mq-wrap::after{content:"";position:absolute;top:0;bottom:0;width:8rem;z-index:2;pointer-events:none}
+.rvw-mq-wrap::before{left:0;background:linear-gradient(to right,var(--color-bg),transparent)}
+.rvw-mq-wrap::after{right:0;background:linear-gradient(to left,var(--color-bg),transparent)}
+.rvw-mq{display:flex;gap:.75rem;width:max-content;animation:rvw-drift 45s linear infinite}
+.rvw-mq-wrap:hover .rvw-mq{animation-play-state:paused}
+@keyframes rvw-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rvw-chip{background:var(--color-surface);border:1px solid var(--color-divider);padding:.9rem 1.25rem;width:17rem;flex-shrink:0}
+.rvw-chip p{font-size:.82rem;line-height:1.5;color:var(--color-muted);margin:0}
+.rvw-chip span{display:block;margin-top:.5rem;font-size:.7rem;color:var(--color-dim)}
+.rvw-cta{text-align:center;margin-top:3.5rem}
+
+/* newsletter */
+.loop{background:var(--color-accent);color:var(--color-bg)}
+.loop .inner{max-width:52rem;margin:0 auto;text-align:center}
+.loop .eyebrow{color:var(--color-bg)}
+.loop h2{font-size:clamp(38px,5vw,84px);line-height:.92;margin:14px 0 18px}
+.loop p{color:color-mix(in srgb,var(--color-bg) 84%,transparent);font-size:18px;margin-bottom:32px}
+.loop form{display:flex;gap:12px;max-width:30rem;margin:0 auto;flex-wrap:wrap}
+.loop input{flex:1;min-width:200px;background:var(--color-bg);border:2px solid var(--color-bg);color:var(--color-text);padding:15px 18px}
+.loop input::placeholder{color:var(--color-dim)}
+.loop input:focus{outline:none;border-color:var(--color-bg);box-shadow:0 0 0 3px rgba(7,6,7,.25)}
+.loop button{background:var(--color-bg);color:var(--color-text);border:0;font-weight:800;padding:15px 26px;cursor:pointer;white-space:nowrap;transition:transform .18s,color .18s}
+.loop button:hover{transform:translateY(-2px);color:var(--color-accent)}
+.loop .msg{font-size:14px;margin-top:16px;min-height:1.2em}
+.loop .msg.ok{color:var(--color-bg)}
+.loop .msg.err{color:#3a0016}
+.loop .small{font-size:12px;color:color-mix(in srgb,var(--color-bg) 70%,transparent);margin-top:14px}
+
+/* footer */
+.footer{border-top:2px solid var(--color-rule);padding:clamp(48px,6vw,72px) clamp(16px,4vw,48px) 40px}
+.footer-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px}
+.footer .brand-col a{font-family:var(--font-display);font-size:22px;letter-spacing:-.02em}
+.footer .brand-col a .text-accent{color:var(--color-accent)}
+.footer .brand-col p{margin-top:16px;font-size:14px;color:var(--color-muted);max-width:34ch;line-height:1.6}
+.footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--color-dim);margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:11px}
+.footer li a{font-size:14px;color:var(--color-muted)}
+.footer li a:hover{color:var(--color-accent)}
+.footer-bottom{max-width:var(--max);margin:44px auto 0;padding-top:24px;border-top:2px solid var(--color-divider);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:12px;color:var(--color-dim)}
+.footer-bottom .links{display:flex;gap:24px}
+.footer-bottom .links a{font-size:12px;color:var(--color-dim)}
+.footer-bottom .links a:hover{color:var(--color-muted)}
+
+/* entrance motion (enhances an already-visible default) */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:fixed;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--color-bg);border-top:1px solid var(--color-divider);padding:8px 0}
+  .nav-links.open a{padding:14px clamp(16px,4vw,48px);border-bottom:1px solid var(--color-divider)}
+  .nav-toggle{display:block}
+  .hero-grid,.latest-grid,.desire-grid,.booking-grid{grid-template-columns:1fr}
+  .hero-photo{aspect-ratio:4/3;order:-1}
+  .desire-photo{order:-1}
+  .chips{grid-template-columns:1fr 1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .hero-actions .btn,.latest-actions .btn{width:100%;justify-content:center}
+  .footer-grid{grid-template-columns:1fr}
+  .chips{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/concept-b/" class="brand"><img src="/concept-b/assets/logo-77-events.png" alt="Room 77 Events"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-links" id="navlinks">
+    <a href="/concept-b/travel/">Book Resorts &amp; Cruises</a>
+    <a href="/concept-b/podcast/" aria-current="page">Podcast</a>
+    <a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a>
+    <a href="/concept-b/flirt/">FLIRT 2027</a>
+    <a href="/concept-b/sin/">SIN 2026</a>
+    <a href="/concept-b/contact/">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy rise">
+        <p class="eyebrow">Richard + Lauren · Room 77 Podcast</p>
+        <h1>The <span class="accent-word">sit-com</span> of lifestyle podcasts.</h1>
+        <p class="lead">Marriage, swinging, Desire, travel, sex, bad decisions, television tangents, and the everyday parts of our life most couples would never put on a microphone. Listen long enough and you are basically in the group chat.</p>
+        <div class="hero-actions">
+          <a href="#latest" class="btn btn-primary">Listen to the Latest Episode
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener" class="btn btn-secondary">Watch on YouTube</a>
+        </div>
+        <div class="platforms"><a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener">Apple Podcasts</a> <span>·</span> <a href="https://open.spotify.com/show/1m2lnjTbXnfhor9QTRzE7g" target="_blank" rel="noopener">Spotify</a> <span>·</span> <a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener">YouTube</a> <span>·</span> 100+ Episodes</div>
+      </div>
+      <div class="hero-photo rise">
+        <img src="assets/richard-lauren.jpg" alt="Richard and Lauren together" width="1440" height="1800">
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- LATEST EPISODE -->
+  <section class="section" id="latest">
+    <div class="inner latest-grid">
+      <a class="play-card" href="#" aria-label="Play the latest episode">
+        <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></span>
+      </a>
+      <div class="latest-copy">
+        <p class="eyebrow">Latest · Episode 106</p>
+        <h2>He/We Accidentally Slept With a Trans Woman — Here&rsquo;s What Happened</h2>
+        <p class="lead">Richard has questions. Lauren has clinical follow-ups. Their guests have stories. Somehow this becomes a conversation about attraction, identity, and who actually feels welcome in the lifestyle.</p>
+        <div class="latest-actions">
+          <a href="#" class="btn btn-primary">Play Episode
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></a>
+          <a href="#" class="btn btn-secondary">Read Show Notes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STATEMENT (pink) -->
+  <section class="section statement" id="about">
+    <div class="inner">
+      <div>
+        <p class="eyebrow">Why it works</p>
+        <h2>You are not listening from the outside.</h2>
+      </div>
+      <p>Room 77 is our actual life. The resort trips, events, arguments, friendships, sex stories, television opinions, mistakes, Muchacho updates, and things Richard should probably not have said all become the show. There is no format holding it together — just two people who kept the microphone on.</p>
+    </div>
+  </section>
+
+  <!-- START WITH THESE -->
+  <section class="section" id="start">
+    <div class="inner">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">New here?</p>
+          <h2>Start with these.</h2>
+        </div>
+        <p class="lead">Three episodes that will tell you almost everything you need to know about us. Unfortunately, none of it will make us look more responsible.</p>
+      </div>
+      <div class="ep-grid">
+        <a class="ep-card" href="#">
+          <span class="ep-num">01</span>
+          <h3>The episode that explains how all of this happened</h3>
+          <p>Marriage, Mexico, the lifestyle, and the series of decisions that became Room 77.</p>
+          <span class="go">Meet Richard + Lauren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+        </a>
+        <a class="ep-card" href="#">
+          <span class="ep-num">02</span>
+          <h3>A story that should have stayed between four people</h3>
+          <p>The kind of Room 77 episode where everyone overshares and Richard creates a new problem.</p>
+          <span class="go">Listener favorite <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+        </a>
+        <a class="ep-card" href="#">
+          <span class="ep-num">03</span>
+          <h3>The resort episode new listeners always find first</h3>
+          <p>A practical guide hidden inside a story that goes completely off the rails.</p>
+          <span class="go">Desire story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIRE -->
+  <section class="section" id="desire">
+    <div class="inner desire-grid">
+      <div class="desire-photo">
+        <img src="assets/desire-pearl.jpg" alt="Richard and Lauren at Desire Pearl" width="1440" height="1384">
+      </div>
+      <div class="desire-copy">
+        <p class="eyebrow">Desire &amp; Temptation</p>
+        <h2>You have heard the stories. Now let us help with yours.</h2>
+        <p class="lead">Desire and Temptation have been part of our life for years. We worked there, recorded there, hosted workshops there, vacation there, and have accumulated opinions about nearly every pool, room, bar, and playroom worth knowing about.</p>
+        <div class="inline-actions">
+          <a href="#booking" class="btn btn-primary">Explore Resort Guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <a href="#booking" class="btn btn-secondary">Compare the Resorts</a>
+        </div>
+        <div class="chips">
+          <a href="#booking">Desire RM</a>
+          <a href="#booking">Desire Pearl</a>
+          <a href="#booking">Temptation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section" id="booking">
+    <div class="inner booking-grid">
+      <div class="booking-copy">
+        <p class="eyebrow">The Travel Desk</p>
+        <h2>Book the trip through the people whose stories convinced you to go.</h2>
+        <p class="lead">We will help you choose the right resort, room category, dates and current offer. You get personal guidance from people who actually know the resorts — plus booking benefits you will not get by simply booking direct.</p>
+      </div>
+      <form class="quote-form" id="quote-form" action="/concept-b/contact/" method="get">
+        <h3>Start your resort quote</h3>
+        <p class="note">Tell us the basics and we&rsquo;ll follow up personally.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="q-name">Name</label>
+            <input id="q-name" name="name" type="text" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="q-email">Email</label>
+            <input id="q-email" name="email" type="email" placeholder="you@email.com">
+          </div>
+          <div class="field">
+            <label for="q-resort">Resort</label>
+            <select id="q-resort" name="resort">
+              <option value="">Select one</option>
+              <option>Desire Riviera Maya</option>
+              <option>Desire Pearl</option>
+              <option>Temptation Cancun</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-dates">Approx. dates</label>
+            <input id="q-dates" name="dates" type="text" placeholder="e.g. March 2027">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Request my quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+        <p class="fineprint">Takes you to our contact form to finish — no charge, no obligation.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- TRAVEL / HANG OUT -->
+  <section class="section" id="travel">
+    <div class="inner">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Overlap with us</p>
+          <h2>Come hang out with us.</h2>
+        </div>
+        <p class="lead">We visit Desire and Temptation throughout the year as regular guests. Sometimes listeners book the same dates and what started as a resort trip turns into a Room 77 reunion.</p>
+      </div>
+      <div class="travel-grid">
+        <div class="travel-card">
+          <h3>Desire Riviera Maya</h3>
+          <p>See when Richard and Lauren will be returning as guests.</p>
+          <a href="#booking" class="go">Ask about these dates <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="travel-card">
+          <h3>Desire Pearl</h3>
+          <p>Join the list for our next regular Pearl trip.</p>
+          <a href="#booking" class="go">Ask about these dates <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="travel-card">
+          <h3>Temptation Cancun</h3>
+          <p>Find out when Room 77 listeners may be overlapping with us.</p>
+          <a href="#booking" class="go">Ask about these dates <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <p class="fineprint-row">These are regular resort stays, not hosted Room 77 events. Richard and Lauren will be visiting as guests.</p>
+    </div>
+  </section>
+
+  <!-- EVENTS / COMMUNITY -->
+  <section class="section" id="events">
+    <div class="inner">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Beyond the feed</p>
+          <h2>Looking for the full Room 77 experience?</h2>
+        </div>
+        <p class="lead">The podcast does not end when the episode does.</p>
+      </div>
+      <div class="split">
+        <div class="feature">
+          <h3>Room 77 Events</h3>
+          <p>Our regular resort trips are vacations. Room 77 Events are hotel takeovers, DJs, theme nights, parties, and the listeners who already know all the inside jokes.</p>
+          <a href="/concept-b/flirt/">FLIRT 2027</a>
+          <a href="/concept-b/sin/" class="btn btn-secondary">View Upcoming Events</a>
+        </div>
+        <div class="feature">
+          <h3>The Community</h3>
+          <p>Membership, the private community, bonus content, listener conversations, and early announcements for trips and events.</p>
+          <a href="https://www.patreon.com/room77" target="_blank" rel="noopener" class="btn btn-secondary">Join the Community</a>
+        </div>
+        <div class="feature">
+          <h3>Room 77, every week</h3>
+          <p>Richard and Lauren&rsquo;s real life — marriage, swinging, Desire, travel, events, sex, mistakes, and everything in between.</p>
+          <a href="https://room77podcast.com" target="_blank" rel="noopener" class="btn btn-primary">Listen now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUEST REVIEWS -->
+  <section class="section" id="reviews" style="overflow:hidden">
+    <div class="inner">
+      <p class="eyebrow" style="text-align:center;margin-bottom:1rem">Guest Reviews</p>
+      <div class="rvw-spot" id="rvw-spot">
+        <blockquote id="rvw-quote">&ldquo;The vibe they&rsquo;ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we&rsquo;ve ever encountered.&rdquo;</blockquote>
+        <p class="rvw-attr" id="rvw-attr"><strong>RnLCouple</strong><span class="rvw-sep">&bull;</span>FLIRT 2026<span class="rvw-sep">&bull;</span>Sold Out</p>
+      </div>
+      <div class="rvw-dots" id="rvw-dots" aria-label="Review navigation"></div>
+      <div class="rvw-mq-wrap" aria-hidden="true"><div class="rvw-mq" id="rvw-mq"></div></div>
+      <div class="rvw-cta">
+        <a href="/concept-b/flirt/">FLIRT 2027</a>
+        <a href="/concept-b/sin/" class="btn btn-primary">Join Us at FLIRT 2027
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY IN THE LOOP (pink) -->
+  <section class="section loop" id="loop">
+    <div class="inner">
+      <p class="eyebrow">Stay in the Loop</p>
+      <h2>Never Miss a Thing.</h2>
+      <p>Event announcements, podcast drops, and exclusive offers. No spam, ever.</p>
+      <form id="newsletter-form">
+        <input id="newsletter-email" type="email" placeholder="you@email.com" required>
+        <button type="submit" id="newsletter-btn">Subscribe</button>
+      </form>
+      <p id="newsletter-msg" class="msg"></p>
+      <p class="small">We respect your inbox. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="brand-col">
+      <a href="/concept-b/">ROOM <span class="text-accent">77</span></a>
+      <p>Luxury lifestyle events, travel experiences, and real conversations.</p>
+    </div>
+    <div>
+      <h4>Events</h4>
+      <ul>
+        <li><a href="/concept-b/sin/">Upcoming Events</a></li>
+        <li><a href="/concept-b/sin/">SIN 2026</a></li>
+        <li><a href="/concept-b/flirt/">FLIRT 2027</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/concept-b/podcast/">Podcast</a></li>
+        <li><a href="/concept-b/travel/">Travel</a></li>
+        <li><a href="https://77lifestyle.com/">Shop</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="/concept-b/#membership">About</a></li>
+        <li><a href="/concept-b/contact/">Contact</a></li>
+        <li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Patreon</a></li>
+      </ul>
+    </div>
+  </div>
+    <div class="social"><a href="https://www.instagram.com/room77podcast/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/touchedby.lnr.9/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a><a href="https://x.com/room77podcast" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a><a href="https://www.tiktok.com/@room77_lauren" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.6 3.7 3.8v2.5c-1.2.1-2.3-.3-3.6-1v5.6c0 4.6-3.4 7.1-6.9 6.3-3.8-.9-5-4.9-3-7.8 1.2-1.7 3.2-2.4 5.3-2v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.2 1-2.1 2.3.1 1.4 1.4 2.2 2.7 1.9 1.1-.3 1.6-1.2 1.6-2.4V3h3.5z"/></svg></a><a href="https://www.youtube.com/@Room77Life" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 0 0 1.8-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6.2 3.3-6.2 3.3z"/></svg></a><a href="https://open.spotify.com/show/1m2lnjTbXnfhor9QTRzE7g" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.3-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.1-1.2a.8.8 0 1 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.5.7.1 1zm.1-2.8C14.7 8.1 9.4 7.9 6.3 8.8a.9.9 0 1 1-.5-1.8c3.6-1.1 9.4-.9 13.1 1.3a.9.9 0 1 1-.9 1.6z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-6 18v-2.3a8 8 0 1 1 12 0V20A10 10 0 0 0 12 2z"/><circle cx="12" cy="9" r="2.4"/><path d="M9.7 13.2a2.3 2.3 0 0 1 4.6 0l-.5 4.6a1.8 1.8 0 0 1-3.6 0l-.5-4.6z"/></svg></a></div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Room 77. All rights reserved.</p>
+    <div class="links">
+      <a href="/concept-b/contact/">Privacy</a>
+      <a href="/concept-b/contact/">Terms</a>
+      <a href="/concept-b/contact/">Your Privacy Choices</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* mobile nav */
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');
+  if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}
+})();
+
+/* ticker */
+(function(){
+  var el=document.getElementById('ticker');if(!el)return;
+  var items=['The Room 77 Podcast','108 episodes','Marriage','Swinging','Desire','Temptation','Travel','Bad decisions','Television tangents','The group chat'];
+  function build(){return items.map(function(t){return '<span>'+t+'</span><b>&bull;</b>';}).join('');}
+  el.innerHTML=build()+build();
+})();
+
+/* guest reviews rotator + marquee (from sandbox, restyled) */
+(function(){
+  var featured=[
+    {q:'“The vibe they’ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we’ve ever encountered.”',a:'<strong>RnLCouple</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“Not too much of anything, but <span class="text-accent">just enough of everything</span>.”',a:'<strong>HowieDewit</strong><span class="rvw-sep">•</span>Flirtation 2024<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“We were new and nervous. Never should have worried — <span class="text-accent">the most welcoming group</span> you can imagine.”',a:'<strong>FunCouple</strong><span class="rvw-sep">•</span>FLIRT 2025<span class="rvw-sep">•</span>Sold Out'},
+    {q:'“The podcast became a <span class="text-accent">guidebook to our journey</span>. With every episode, our fears subsided.”',a:'<strong>VelvetVibes</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'}];
+  var chips=[
+    ['Best event yet — and nope, not making it up.','Ninetyfour · FLIRT 2026'],
+    ['Even the food was on point. Signed up for the next two!','EasyEnergy · FLIRT 2026'],
+    ['The DJs were the best we’ve ever had at an event.','Sens8Couple · SIN 2025'],
+    ['A fully loaded beach party under the stars.','Trius · FLIRT 2026'],
+    ['Many couples booked the next event before heading home.','RnLCouple · FLIRT 2026'],
+    ['They keep it personal and try to know every guest.','TomLydia · FLIRT 2025'],
+    ['Everyone was so friendly and welcoming.','2New2Quit · FLIRT 2025'],
+    ['Hands down the best takeover. Well organized, awesome people.','Fun4Us21 · SIN 2024']];
+  var q=document.getElementById('rvw-quote'),a=document.getElementById('rvw-attr'),spot=document.getElementById('rvw-spot'),dots=document.getElementById('rvw-dots'),idx=0,timer;
+  if(!q)return;
+  featured.forEach(function(f,i){var b=document.createElement('button');b.setAttribute('aria-label','Review '+(i+1));if(i===0)b.className='rvw-on';b.onclick=function(){show(i);restart();};dots.appendChild(b);});
+  function show(i){idx=i;spot.classList.add('rvw-fading');setTimeout(function(){q.innerHTML=featured[i].q;a.innerHTML=featured[i].a;spot.classList.remove('rvw-fading');var ds=dots.children;for(var k=0;k<ds.length;k++){ds[k].className=k===i?'rvw-on':'';}},500);}
+  function restart(){clearInterval(timer);timer=setInterval(function(){show((idx+1)%featured.length);},6000);}
+  restart();
+  var m=document.getElementById('rvw-mq');
+  var h=chips.map(function(c){return '<div class="rvw-chip"><p>“'+c[0]+'”</p><span>'+c[1]+'</span></div>';}).join('');
+  m.innerHTML=h+h;
+})();
+
+/* newsletter (posts to admin.room77life.com) */
+(function(){
+  var s=document.getElementById('newsletter-form'),a=document.getElementById('newsletter-email'),n=document.getElementById('newsletter-btn'),e=document.getElementById('newsletter-msg');
+  if(!s)return;
+  s.addEventListener('submit',async function(o){o.preventDefault();n.disabled=!0;n.textContent='Subscribing…';e.className='msg';
+    try{var t=await fetch('https://admin.room77life.com/api/newsletter/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:a.value})});
+      if(t.ok){e.textContent="You're in! Check your inbox for updates.";e.className='msg ok';s.reset();}
+      else{var r=await t.json().catch(function(){return {};});throw new Error(r.error||'Something went wrong');}}
+    catch(t){e.textContent=t.message||'Something went wrong. Please try again.';e.className='msg err';}
+    finally{n.disabled=!1;n.textContent='Subscribe';}});
+})();
+</script>
+</body>
+</html>
