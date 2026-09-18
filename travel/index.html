@@ -10,6 +10,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/concept-b/assets/site.css">
+<style>
+  .partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(14px,1.6vw,20px);max-width:var(--max);margin:0 auto}
+  .partner-card{display:flex;align-items:center;gap:16px;background:var(--color-surface);border:1px solid var(--color-divider);padding:18px 20px;transition:border-color .2s,transform .2s}
+  .partner-card:hover{border-color:var(--color-accent);transform:translateY(-2px)}
+  .partner-icon{font-size:30px;line-height:1;flex:none}
+  .partner-card .pc-text{flex:1;min-width:0}
+  .partner-tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);font-weight:700;margin:0}
+  .partner-name{font-family:var(--font-display);font-size:clamp(16px,1.3vw,19px);letter-spacing:-.01em;line-height:1.1;margin:3px 0 0;color:var(--color-text)}
+  .partner-card .btn-sm{flex:none;padding:11px 20px;font-size:14px;white-space:nowrap}
+</style>
 </head>
 <body>
 
@@ -36,7 +46,7 @@
       <h1>Book resorts <span class="ghost">&amp; cruises</span></h1>
       <p class="lead" style="max-width:62rem;text-align:justify">We book the lifestyle resorts we actually go to — and we make sure you never overpay. Same room, same rate as booking direct, or less: we search competing platforms, private rates, and unadvertised offers, then run the price-match for you. Cash back, too, at Temptation and Desire Pearl.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="https://account.room77life.com">Start a booking
+        <a class="btn btn-primary" href="#book">Start a booking
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
         <a class="btn btn-secondary" href="#quote">Request a quote</a>
       </div>
@@ -72,6 +82,75 @@
         <span><span class="r-name">Hedonism II</span><span class="r-meta">Negril, Jamaica — the original. Loud. Certified partner (no cash back).</span></span>
         <span class="r-cta" style="color:var(--color-muted)">Book <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
       </a>
+    </div>
+  </section>
+
+  <!-- BOOK DIRECT (affiliate click-through) -->
+  <section class="section" id="book" style="border-top:2px solid var(--color-divider)">
+    <div class="inner sec-head">
+      <div>
+        <p class="eyebrow">Book direct</p>
+        <h2>Click through and book.</h2>
+      </div>
+      <p class="lead">Ready now? Book straight through our partner links below — same rate as booking direct or less, with our best-rate guarantee, plus cash back where it applies. Not sure yet? <a href="#quote" style="color:var(--color-accent);font-weight:700">Request a quote</a> instead.</p>
+    </div>
+    <div class="inner partner-grid">
+      <div class="partner-card">
+        <span class="partner-icon">🌊</span>
+        <div class="pc-text">
+          <p class="partner-tag">Mexico · All Inclusive</p>
+          <p class="partner-name">Desire Riviera Maya Resorts</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://www.desire-experience.com/?affiliate=2859&amp;partner=10271" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">🔥</span>
+        <div class="pc-text">
+          <p class="partner-tag">Cancún · All Inclusive</p>
+          <p class="partner-name">Temptation Cancun Resort</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://www.temptation-experience.com/resorts/temptation-cancun-resort/?affiliate=2859&amp;partner=10271" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">⛵</span>
+        <div class="pc-text">
+          <p class="partner-tag">Couples Luxury Cruise</p>
+          <p class="partner-name">Desire Cruises</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://desire-cruises.com/?affiliate=2859&amp;partner=10271" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">🥂</span>
+        <div class="pc-text">
+          <p class="partner-tag">Adults Only Cruise</p>
+          <p class="partner-name">Temptation Grand Cruises</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://temptationcruises.com/?affiliate=2859&amp;partner=10271" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">🚢</span>
+        <div class="pc-text">
+          <p class="partner-tag">Lifestyle Cruise</p>
+          <p class="partner-name">Bliss Cruises</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://registration.blisscruise.com/Book/Reservation/Start?tripId=3252&amp;travelAgentId=175495" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">🌴</span>
+        <div class="pc-text">
+          <p class="partner-tag">Florida · Lifestyle Destination</p>
+          <p class="partner-name">Secrets Hideaway</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://secretsfl.com/?TravelAffiliate=29133" target="_blank" rel="noopener sponsored">Book Now</a>
+      </div>
+      <div class="partner-card">
+        <span class="partner-icon">🏝️</span>
+        <div class="pc-text">
+          <p class="partner-tag">Jamaica · Clothing Optional</p>
+          <p class="partner-name">Hedonism Resort</p>
+        </div>
+        <a class="btn btn-secondary btn-sm" href="#quote">Get a Quote</a>
+      </div>
     </div>
   </section>
 
