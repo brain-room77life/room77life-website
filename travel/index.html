@@ -74,11 +74,11 @@
     </div>
     <div class="inner ledger">
       <a class="row" href="https://account.room77life.com">
-        <span><span class="r-name">Desire Riviera Maya</span><span class="r-meta">Riviera Maya · at sea — couples-only*, clothing-optional</span></span>
+        <span><span class="r-name">Desire Riviera Maya</span><span class="r-meta">Riviera Maya · at sea — couples-only, clothing-optional</span></span>
         <span class="r-cta" style="color:var(--color-accent)">Best Rate guarantee <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
       </a>
       <a class="row" href="https://account.room77life.com">
-        <span><span class="r-name">Desire Pearl</span><span class="r-meta">Riviera Maya · the intimate one — couples-only*, clothing-optional</span></span>
+        <span><span class="r-name">Desire Pearl</span><span class="r-meta">Riviera Maya · the intimate one — couples-only, clothing-optional</span></span>
         <span class="r-cta" style="color:var(--color-accent)">Cash back <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
       </a>
       <a class="row" href="https://account.room77life.com">
@@ -202,7 +202,7 @@
         <button type="submit" class="btn btn-primary">Request my quote
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
         <p class="form-msg" id="lead-msg"></p>
-        <p class="fineprint">We&rsquo;ll email you back personally — usually within a couple hours.</p>
+        <p class="fineprint">We’ll email you back personally — usually within a couple hours.</p>
       </form>
     </div>
   </section>
@@ -325,7 +325,7 @@
     var body='Resort quote request. Resort: '+resort+'. Approx dates: '+dates+'.\n\n— LS Website: '+site+'\n— LS Profile: '+prof;
     var payload={first_name:f['first_name'].value,last_name:f['last_name'].value,email:f['email'].value,interest:'Travel / Quote',source:src,message:body,hp_email:f['hp_email'].value};
     try{var r=await fetch('https://admin.room77life.com/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-      if(r.ok){msg.textContent='Got it! We&rsquo;ll email you back personally.';msg.className='form-msg ok';s.reset();}
+      if(r.ok){msg.textContent='Got it! We’ll email you back personally.';msg.className='form-msg ok';s.reset();}
       else{var j=await r.json().catch(function(){return{};});throw new Error(j.error||'Something went wrong');}}
     catch(err){msg.textContent=err.message||'Something went wrong. Please try again.';msg.className='form-msg err';}
     finally{b.disabled=!1;b.innerHTML=ot;}});
