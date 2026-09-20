@@ -1,0 +1,17 @@
+/* Resort guide pages — concept-b article typography */
+.guide-hero{padding:clamp(90px,12vh,150px) clamp(16px,4vw,48px) clamp(36px,5vw,56px);border-bottom:1px solid var(--color-rule);background:radial-gradient(120% 100% at 50% 0,rgba(251,24,122,.10),transparent 60%)}
+.guide-hero .inner{max-width:var(--max);margin:0 auto}
+.guide-hero .eyebrow{color:var(--color-accent);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;margin-bottom:18px}
+.guide-hero h1{font-family:var(--font-display);font-size:clamp(32px,5.4vw,60px);line-height:1.03;letter-spacing:-.02em;max-width:20ch}
+.guide-hero .lead{margin-top:20px;max-width:62ch;font-size:clamp(16px,1.4vw,19px);color:var(--color-muted);line-height:1.6}
+.guide-body{padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px)}
+.guide-body .inner{max-width:760px;margin:0 auto}
+.guide-body h2{font-family:var(--font-display);font-size:clamp(23px,2.9vw,33px);line-height:1.12;letter-spacing:-.01em;margin:clamp(38px,4vw,54px) 0 14px}
+.guide-body h3{font-family:var(--font-display);font-size:clamp(19px,2.1vw,23px);margin:30px 0 10px}
+.guide-body p{font-size:17px;line-height:1.75;color:var(--color-soft,#d7d2d5);margin:0 0 20px}
+.guide-body ul{margin:0 0 22px;padding-left:22px;display:grid;gap:10px}
+.guide-body li{font-size:17px;line-height:1.7;color:var(--color-soft,#d7d2d5)}
+.guide-body a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+.guide-body a:hover{opacity:.8}
+.guide-cta{margin-top:clamp(48px,6vw,72px);padding:clamp(28px,4vw,40px);border:1px solid var(--color-rule);border-radius:16px;background:rgba(255,255,255,.02)}
+.guide-cta p{font-size:18px;color:var(--color-fg,#fff);margin-bottom:20px}
