@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#070607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Blackfamily=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swapfamily=Archivo:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --color-bg:#070607;
@@ -86,6 +86,10 @@ p{color:var(--color-muted)}
 .play-btn{width:88px;height:88px;border-radius:50%;background:var(--color-accent);display:grid;place-items:center;box-shadow:0 18px 60px rgba(251,24,122,.4);transition:transform .2s}
 .play-card:hover .play-btn{transform:scale(1.06)}
 .play-btn svg{width:34px;height:34px;fill:#fff;margin-left:5px}
+.play-card{cursor:pointer}
+.play-card .yt-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.play-card .play-btn{position:relative;z-index:1}
+.play-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
 .latest-copy h2{font-size:clamp(28px,3.4vw,50px);margin:14px 0 18px;line-height:.98}
 .latest-copy .lead{margin-bottom:26px}
 .latest-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -281,17 +285,18 @@ p{color:var(--color-muted)}
   <!-- LATEST EPISODE -->
   <section class="section" id="latest">
     <div class="inner latest-grid">
-      <a class="play-card" href="#" aria-label="Play the latest episode">
+      <div class="play-card" id="latest-video" data-yt="22PT-6FoOAM" role="button" tabindex="0" aria-label="Play Episode 108: Temptation: Destination Truth">
+        <img class="yt-poster" src="https://i.ytimg.com/vi/22PT-6FoOAM/hqdefault.jpg" alt="" loading="lazy">
         <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></span>
-      </a>
+      </div>
       <div class="latest-copy">
-        <p class="eyebrow">Latest · Episode 106</p>
-        <h2>He/We Accidentally Slept With a Trans Woman — Here&rsquo;s What Happened</h2>
-        <p class="lead">Richard has questions. Lauren has clinical follow-ups. Their guests have stories. Somehow this becomes a conversation about attraction, identity, and who actually feels welcome in the lifestyle.</p>
+        <p class="eyebrow">Latest · Episode 108</p>
+        <h2>Temptation: Destination Truth</h2>
+        <p class="lead">Not quite a lifestyle resort, not quite vanilla &mdash; Temptation somehow exists in a category all its own. Before heading back, Richard and Lauren made a list of everything you actually need to know.</p>
         <div class="latest-actions">
-          <a href="#" class="btn btn-primary">Play Episode
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></a>
-          <a href="#" class="btn btn-secondary">Read Show Notes</a>
+          <a href="/concept-b/temptation-resorts-destination-truth/" class="btn btn-primary">Read Show Notes &amp; Transcript
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <a href="https://www.youtube.com/watch?v=22PT-6FoOAM" target="_blank" rel="noopener" class="btn btn-secondary">Watch on YouTube</a>
         </div>
       </div>
     </div>
@@ -319,24 +324,28 @@ p{color:var(--color-muted)}
         <p class="lead">Three episodes that will tell you almost everything you need to know about us. Unfortunately, none of it will make us look more responsible.</p>
       </div>
       <div class="ep-grid">
-        <a class="ep-card" href="#">
+        <a class="ep-card" href="/concept-b/episode-1/">
           <span class="ep-num">01</span>
           <h3>The episode that explains how all of this happened</h3>
           <p>Marriage, Mexico, the lifestyle, and the series of decisions that became Room 77.</p>
           <span class="go">Meet Richard + Lauren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
         </a>
-        <a class="ep-card" href="#">
+        <a class="ep-card" href="/concept-b/room-77-podcast-ep-43-villa-party/">
           <span class="ep-num">02</span>
           <h3>A story that should have stayed between four people</h3>
           <p>The kind of Room 77 episode where everyone overshares and Richard creates a new problem.</p>
           <span class="go">Listener favorite <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
         </a>
-        <a class="ep-card" href="#">
+        <a class="ep-card" href="/concept-b/room-77-podcast-desire-hedonism-comparison/">
           <span class="ep-num">03</span>
           <h3>The resort episode new listeners always find first</h3>
           <p>A practical guide hidden inside a story that goes completely off the rails.</p>
           <span class="go">Desire story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></span>
         </a>
+      </div>
+      <div style="text-align:center;margin-top:clamp(32px,4vw,52px)">
+        <a href="/concept-b/podcast/episodes/" class="btn btn-primary">Browse all 107 episodes
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
     </div>
   </section>
@@ -461,7 +470,7 @@ p{color:var(--color-muted)}
           <a href="https://www.patreon.com/room77" target="_blank" rel="noopener" class="btn btn-secondary">Join the Community</a>
         </div>
         <div class="feature">
-          <h3>Room 77, every week</h3>
+          <h3>Room 77, every month</h3>
           <p>Richard and Lauren&rsquo;s real life — marriage, swinging, Desire, travel, events, sex, mistakes, and everything in between.</p>
           <a href="https://room77podcast.com" target="_blank" rel="noopener" class="btn btn-primary">Listen now
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
@@ -473,16 +482,16 @@ p{color:var(--color-muted)}
   <!-- GUEST REVIEWS -->
   <section class="section" id="reviews" style="overflow:hidden">
     <div class="inner">
-      <p class="eyebrow" style="text-align:center;margin-bottom:1rem">Guest Reviews</p>
+      <p class="eyebrow" style="text-align:center;margin-bottom:1rem">Listener Reviews &middot; Apple Podcasts</p>
       <div class="rvw-spot" id="rvw-spot">
-        <blockquote id="rvw-quote">&ldquo;The vibe they&rsquo;ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we&rsquo;ve ever encountered.&rdquo;</blockquote>
-        <p class="rvw-attr" id="rvw-attr"><strong>RnLCouple</strong><span class="rvw-sep">&bull;</span>FLIRT 2026<span class="rvw-sep">&bull;</span>Sold Out</p>
+        <blockquote id="rvw-quote">&ldquo;No question the <span class="text-accent">most entertaining LS podcast</span> there is. A guilty pleasure to hear their latest adventures.&rdquo;</blockquote>
+        <p class="rvw-attr" id="rvw-attr"><strong>Jus-da-facts</strong><span class="rvw-sep">&bull;</span>Apple Podcasts<span class="rvw-sep">&bull;</span>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
       </div>
       <div class="rvw-dots" id="rvw-dots" aria-label="Review navigation"></div>
       <div class="rvw-mq-wrap" aria-hidden="true"><div class="rvw-mq" id="rvw-mq"></div></div>
       <div class="rvw-cta">
-        <a href="/concept-b/flirt/">FLIRT 2027</a>
-        <a href="/concept-b/sin/" class="btn btn-primary">Join Us at FLIRT 2027
+        <a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener">Read more on Apple Podcasts</a>
+        <a href="https://podcasts.apple.com/us/podcast/room-77-swinger-podcast-lifestyle-podcast-for-swingers/id1384700179" target="_blank" rel="noopener" class="btn btn-primary">Leave a Review
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
     </div>
@@ -522,6 +531,7 @@ p{color:var(--color-muted)}
       <h4>Explore</h4>
       <ul>
         <li><a href="/concept-b/podcast/">Podcast</a></li>
+        <li><a href="/concept-b/podcast/episodes/">All Episodes</a></li>
         <li><a href="/concept-b/travel/">Travel</a></li>
         <li><a href="https://77lifestyle.com/">Shop</a></li>
       </ul>
@@ -564,19 +574,22 @@ p{color:var(--color-muted)}
 /* guest reviews rotator + marquee (from sandbox, restyled) */
 (function(){
   var featured=[
-    {q:'“The vibe they’ve created attracts some of the <span class="text-accent">sexiest, most genuine people</span> we’ve ever encountered.”',a:'<strong>RnLCouple</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'},
-    {q:'“Not too much of anything, but <span class="text-accent">just enough of everything</span>.”',a:'<strong>HowieDewit</strong><span class="rvw-sep">•</span>Flirtation 2024<span class="rvw-sep">•</span>Sold Out'},
-    {q:'“We were new and nervous. Never should have worried — <span class="text-accent">the most welcoming group</span> you can imagine.”',a:'<strong>FunCouple</strong><span class="rvw-sep">•</span>FLIRT 2025<span class="rvw-sep">•</span>Sold Out'},
-    {q:'“The podcast became a <span class="text-accent">guidebook to our journey</span>. With every episode, our fears subsided.”',a:'<strong>VelvetVibes</strong><span class="rvw-sep">•</span>FLIRT 2026<span class="rvw-sep">•</span>Sold Out'}];
+    {q:'“No question the <span class="text-accent">most entertaining LS podcast</span> there is. A guilty pleasure to hear their latest adventures.”',a:'<strong>Jus-da-facts</strong><span class="rvw-sep">•</span>Apple Podcasts<span class="rvw-sep">•</span>★★★★★'},
+    {q:'“Lauren and Richard will quickly <span class="text-accent">become your best friends</span> — hilarious stories, whacky adventures, contagious laughter. 100 stars.”',a:'<strong>MrsSharkPKC</strong><span class="rvw-sep">•</span>Apple Podcasts<span class="rvw-sep">•</span>★★★★★'},
+    {q:'“The reason this podcast works is <span class="text-accent">it is all of us</span>. Bare honesty and insight — it stands out above all the others.”',a:'<strong>laurenmcb</strong><span class="rvw-sep">•</span>Apple Podcasts<span class="rvw-sep">•</span>★★★★★'},
+    {q:'“Each episode <span class="text-accent">packs a punch</span>. Listen. And then listen some more. Do it now.”',a:'<strong>Ian LeMasters</strong><span class="rvw-sep">•</span>Apple Podcasts<span class="rvw-sep">•</span>★★★★★'},
+    {q:'“A real look at the lifestyle — <span class="text-accent">a high chance this could improve your sex life</span>.”',a:'<strong>Curious In GA</strong><span class="rvw-sep">•</span>Apple Podcasts<span class="rvw-sep">•</span>★★★★★'}];
   var chips=[
-    ['Best event yet — and nope, not making it up.','Ninetyfour · FLIRT 2026'],
-    ['Even the food was on point. Signed up for the next two!','EasyEnergy · FLIRT 2026'],
-    ['The DJs were the best we’ve ever had at an event.','Sens8Couple · SIN 2025'],
-    ['A fully loaded beach party under the stars.','Trius · FLIRT 2026'],
-    ['Many couples booked the next event before heading home.','RnLCouple · FLIRT 2026'],
-    ['They keep it personal and try to know every guest.','TomLydia · FLIRT 2025'],
-    ['Everyone was so friendly and welcoming.','2New2Quit · FLIRT 2025'],
-    ['Hands down the best takeover. Well organized, awesome people.','Fun4Us21 · SIN 2024']];
+    ['I’m always disappointed when the episode ends.','Sardogg74 · Apple Podcasts'],
+    ['95% chance it’s going to be a banger episode!','Rianmm97 · Apple Podcasts'],
+    ['Be prepared to smile and laugh a lot. Great info as well.','JoeMetallica · Apple Podcasts'],
+    ['The love they have for each other and the lifestyle is amazing.','Hugh1977 · Apple Podcasts'],
+    ['I’ve now listened to every episode in order!','NaughtyIntentions · Apple Podcasts'],
+    ['Sound quality, editing, segment flow — you guys are the GOAT.','60grit · Apple Podcasts'],
+    ['Exposes the real people behind the lifestyle.','godsgracex4 · Apple Podcasts'],
+    ['Found their podcast and it changed me, lol.','JC Coleman · Apple Podcasts'],
+    ['Her laugh gets me through life.','Vectra LA · Apple Podcasts'],
+    ['Richard always makes me laugh. Beautiful people!','HornyinJerZ · Apple Podcasts']];
   var q=document.getElementById('rvw-quote'),a=document.getElementById('rvw-attr'),spot=document.getElementById('rvw-spot'),dots=document.getElementById('rvw-dots'),idx=0,timer;
   if(!q)return;
   featured.forEach(function(f,i){var b=document.createElement('button');b.setAttribute('aria-label','Review '+(i+1));if(i===0)b.className='rvw-on';b.onclick=function(){show(i);restart();};dots.appendChild(b);});
@@ -598,6 +611,15 @@ p{color:var(--color-muted)}
       else{var r=await t.json().catch(function(){return {};});throw new Error(r.error||'Something went wrong');}}
     catch(t){e.textContent=t.message||'Something went wrong. Please try again.';e.className='msg err';}
     finally{n.disabled=!1;n.textContent='Subscribe';}});
+})();
+
+/* latest-episode click-to-play (YouTube facade) */
+(function(){
+  var c=document.getElementById('latest-video');if(!c)return;
+  function play(){var id=c.getAttribute('data-yt');
+    c.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Episode 108" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>';}
+  c.addEventListener('click',play);
+  c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});
 })();
 </script>
 </body>
