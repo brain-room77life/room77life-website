@@ -11,7 +11,7 @@
   --color-dim:color-mix(in srgb,var(--color-text) 62%,transparent);
   --color-divider:color-mix(in srgb,var(--color-text) 20%,transparent);
   --color-rule:color-mix(in srgb,var(--color-text) 82%,transparent);
-  --font-body:'Archivo',system-ui,-apple-system,sans-serif;
+  --font-body:'Lato',system-ui,-apple-system,sans-serif;
   --font-display:'Archivo Black','Archivo',sans-serif;
   --max:1240px;
 }

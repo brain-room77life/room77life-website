@@ -8,9 +8,11 @@
 <meta name="theme-color" content="#070607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/concept-b/assets/site.css">
 <style>
+  .cards{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:560px){.cards{grid-template-columns:repeat(2,1fr)}}
   .partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(14px,1.6vw,20px);max-width:var(--max);margin:0 auto}
   .partner-card{display:flex;align-items:center;gap:16px;background:var(--color-surface);border:1px solid var(--color-divider);padding:18px 20px;transition:border-color .2s,transform .2s}
   .partner-card:hover{border-color:var(--color-accent);transform:translateY(-2px)}
@@ -28,6 +30,61 @@
   .faq details>p{padding:0 4px 24px;max-width:74ch;color:var(--color-muted);font-size:16px;line-height:1.65;margin:0}
   .resorts-bg{position:relative;isolation:isolate}
   .resorts-bg::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(180deg,rgba(7,6,7,.92),rgba(7,6,7,.66) 45%,rgba(7,6,7,.95)),url('/concept-b/assets/temptation-hat.jpg');background-image:linear-gradient(180deg,rgba(7,6,7,.92),rgba(7,6,7,.66) 45%,rgba(7,6,7,.95)),image-set(url('/concept-b/assets/temptation-hat.webp') type('image/webp'),url('/concept-b/assets/temptation-hat.jpg') type('image/jpeg'));background-size:cover;background-position:center 18%;background-repeat:no-repeat}
+  @media(max-width:640px){.resorts-bg::before{background-size:contain;background-position:center;background-repeat:no-repeat}}
+  /* guest reviews rotator + marquee */
+  .rvw-spot{max-width:52rem;margin:0 auto;text-align:center;min-height:15rem;display:flex;flex-direction:column;justify-content:center}
+  .rvw-spot blockquote{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.03em;transition:opacity .5s ease,transform .5s ease;margin:0}
+  .rvw-spot blockquote .text-accent{color:var(--color-accent)}
+  .rvw-attr{margin-top:1.75rem;font-size:.9rem;color:var(--color-muted);transition:opacity .5s ease}
+  .rvw-attr strong{color:var(--color-text);font-weight:800}
+  .rvw-attr .rvw-sep{color:var(--color-dim);margin:0 .5rem}
+  .rvw-fading blockquote,.rvw-fading .rvw-attr{opacity:0;transform:translateY(8px)}
+  .rvw-dots{display:flex;gap:.5rem;justify-content:center;margin-top:2.25rem}
+  .rvw-dots button{width:1.75rem;height:3px;border:0;background:rgba(244,241,242,.18);cursor:pointer;transition:background .3s;padding:0}
+  .rvw-dots button.rvw-on{background:var(--color-accent)}
+  .rvw-dots button:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+  .rvw-mq-wrap{margin-top:4.5rem;position:relative}
+  .rvw-mq-wrap::before,.rvw-mq-wrap::after{content:"";position:absolute;top:0;bottom:0;width:8rem;z-index:2;pointer-events:none}
+  .rvw-mq-wrap::before{left:0;background:linear-gradient(to right,var(--color-bg),transparent)}
+  .rvw-mq-wrap::after{right:0;background:linear-gradient(to left,var(--color-bg),transparent)}
+  .rvw-mq{display:flex;gap:.75rem;width:max-content;animation:rvw-drift 45s linear infinite}
+  .rvw-mq-wrap:hover .rvw-mq{animation-play-state:paused}
+  @keyframes rvw-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .rvw-chip{background:var(--color-surface);border:1px solid var(--color-divider);padding:.9rem 1.25rem;width:17rem;flex-shrink:0}
+  .rvw-chip p{font-size:.82rem;line-height:1.5;color:var(--color-muted);margin:0}
+  .rvw-chip span{display:block;margin-top:.5rem;font-size:.7rem;color:var(--color-dim)}
+  .rvw-cta{text-align:center;margin-top:3.5rem}
+  /* quote form: single column on mobile */
+  @media(max-width:700px){#quote .inner{grid-template-columns:1fr!important}}
+  /* desktop-only reviews inside "Your advantage" */
+  .adv-right{display:flex;flex-direction:column;gap:1.5rem}
+  .adv-bottom{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+  .adv-bottom-cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .adv-rvw{display:none}
+  .adv-right .rvw-spot{max-width:none;text-align:left;min-height:0}
+  .adv-right .rvw-spot blockquote{font-size:clamp(1.2rem,1.9vw,1.7rem)}
+  .adv-right .rvw-dots{justify-content:flex-start;margin-top:1.1rem}
+  .pink .rvw-spot blockquote{color:#fff}
+  .pink .rvw-spot blockquote .text-accent{color:var(--color-bg)}
+  .pink .rvw-attr{color:color-mix(in srgb,var(--color-bg) 82%,transparent)}
+  .pink .rvw-attr strong{color:var(--color-bg)}
+  .pink .rvw-attr .rvw-sep{color:color-mix(in srgb,var(--color-bg) 55%,transparent)}
+  .pink .rvw-dots button{background:rgba(7,6,7,.22)}
+  .pink .rvw-dots button.rvw-on{background:var(--color-bg)}
+  .pink .rvw-mq-wrap{margin-top:0;overflow:hidden}
+  .pink .rvw-mq-wrap::before{background:linear-gradient(to right,var(--color-accent),transparent)}
+  .pink .rvw-mq-wrap::after{background:linear-gradient(to left,var(--color-accent),transparent)}
+  .pink .rvw-chip{background:#fff;border-color:rgba(0,0,0,.08)}
+  .pink .rvw-chip p{color:var(--color-bg)}
+  .pink .rvw-chip span{color:color-mix(in srgb,var(--color-bg) 60%,transparent)}
+  .adv-lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:46ch;font-weight:700;text-wrap:balance}
+  @media(max-width:700px){.form-grid{grid-template-columns:1fr}}
+  @media(min-width:901px){
+    .adv-lead{font-size:clamp(15px,1.15vw,18px);max-width:none}
+    .adv-rvw{display:block}
+    #reviews{display:none}
+    .adv-bottom{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+  }
 </style>
 </head>
 <body>
@@ -101,7 +158,16 @@
         <p class="eyebrow">Your advantage</p>
         <h2 style="font-size:clamp(32px,4.4vw,68px)">Why book your Desire or Temptation reservation through us.</h2>
       </div>
-      <p style="font-size:clamp(17px,1.4vw,21px);line-height:1.5;align-self:flex-end;max-width:46ch">The Stay &amp; Play Club&rsquo;s &ldquo;best rate guarantee&rdquo; reflects their loyalty club price — it&rsquo;s not a full market search. We go further.</p>
+      <div class="adv-right">
+        <div class="rvw-rotator adv-rvw">
+          <div class="rvw-spot">
+            <blockquote class="rvw-quote">&ldquo;I can&rsquo;t say enough great things about Lauren. She&rsquo;s my go-to for booking all my trips to Desire, and she consistently goes <span class="text-accent">above and beyond</span> to make the whole process seamless.&rdquo;</blockquote>
+            <p class="rvw-attr"><strong>Desire regular</strong><span class="rvw-sep">&bull;</span>Facebook</p>
+          </div>
+          <div class="rvw-dots" aria-label="Review navigation"></div>
+        </div>
+        <p class="adv-lead">The Stay &amp; Play Club&rsquo;s &ldquo;best rate guarantee&rdquo; reflects their loyalty club price — it&rsquo;s not a full market search. We go further.</p>
+      </div>
     </div>
     <div class="inner cards">
       <div class="card" style="background:#fff;border-color:rgba(0,0,0,.08)">
@@ -132,13 +198,35 @@
       <div class="card" style="background:#fff;border-color:rgba(0,0,0,.08)">
         <span class="n" style="color:var(--color-bg)">06</span>
         <h3 style="color:var(--color-bg)">Free Bikini Included</h3>
-        <p style="color:color-mix(in srgb,var(--color-bg) 80%,transparent)">Every qualified booking* through our links earns you a complimentary Bikini Addiction bikini, and supports Room 77 Life at absolutely no extra cost to you.</p>
+        <p style="color:color-mix(in srgb,var(--color-bg) 80%,transparent)">Every qualified booking* through our links earns you a complimentary <a href="https://bikiniaddiction.com/?ref=room77" target="_blank" rel="noopener sponsored" style="color:inherit;text-decoration:underline">Bikini Addiction</a> bikini, and supports Room 77 Life at absolutely no extra cost to you.</p>
       </div>
     </div>
-    <div class="inner" style="margin-top:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:14px;align-items:flex-start">
-      <a class="btn btn-invert" href="#quote">Get a Quote
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-      <p style="font-size:13px;line-height:1.4;color:color-mix(in srgb,var(--color-bg) 68%,transparent);margin:0">*Qualified booking requires a minimum $2,000 spend or 4-night stay.</p>
+    <div class="inner adv-bottom" style="margin-top:clamp(28px,3.5vw,44px)">
+      <div class="adv-bottom-cta">
+        <a class="btn btn-invert" href="#quote">Get a Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <p style="font-size:13px;line-height:1.4;color:color-mix(in srgb,var(--color-bg) 68%,transparent);margin:0">*Qualified booking requires a minimum $2,000 spend.</p>
+      </div>
+      <div class="rvw-mq-wrap adv-rvw" aria-hidden="true"><div class="rvw-mq"></div></div>
+    </div>
+  </section>
+
+  <!-- GUEST REVIEWS -->
+  <section class="section" id="reviews" style="overflow:hidden">
+    <div class="inner">
+      <p class="eyebrow" style="text-align:center;margin-bottom:1rem">What guests say</p>
+      <div class="rvw-rotator">
+        <div class="rvw-spot">
+          <blockquote class="rvw-quote">&ldquo;I can&rsquo;t say enough great things about Lauren. She&rsquo;s my go-to for booking all my trips to Desire, and she consistently goes <span class="text-accent">above and beyond</span> to make the whole process seamless.&rdquo;</blockquote>
+          <p class="rvw-attr"><strong>Desire regular</strong><span class="rvw-sep">&bull;</span>Facebook</p>
+        </div>
+        <div class="rvw-dots" aria-label="Review navigation"></div>
+      </div>
+      <div class="rvw-mq-wrap" aria-hidden="true"><div class="rvw-mq"></div></div>
+      <div class="rvw-cta">
+        <a href="#quote" class="btn btn-primary">Get your quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+      </div>
     </div>
   </section>
 
@@ -332,6 +420,34 @@
       else{var j=await r.json().catch(function(){return{};});throw new Error(j.error||'Something went wrong');}}
     catch(err){msg.textContent=err.message||'Something went wrong. Please try again.';msg.className='form-msg err';}
     finally{b.disabled=!1;b.innerHTML=ot;}});
+})();
+/* guest reviews rotator + marquee */
+(function(){
+  var featured=[
+    {q:'“I can’t say enough great things about Lauren. She’s my go-to for booking all my trips to Desire, and she consistently goes <span class=\"text-accent\">above and beyond</span> to make the whole process seamless.”',a:'<strong>Desire regular</strong><span class=\"rvw-sep\">•</span>Facebook'},
+    {q:'“We’ve booked our Pearl trips with Lauren for years. She always gets us a great deal — our latest trip we paid <span class=\"text-accent\">less for a master suite</span> than we did two years ago for a Junior Suite.”',a:'<strong>Desire Pearl guest</strong><span class=\"rvw-sep\">•</span>Facebook'},
+    {q:'“Lauren made it <span class=\"text-accent\">easy from beginning to end</span>. She helped us pick the right resort for our first lifestyle trip, got us a great room we didn’t even see on the site, and found us a luxury hotel when we arrived in Cancún a day early.”',a:'<strong>First lifestyle trip</strong><span class=\"rvw-sep\">•</span>Facebook'},
+    {q:'“Lauren was the best. Made everything super easy and made us so comfortable with all our questions. We’ve booked <span class=\"text-accent\">every Desire and Temptation trip</span> with her — all flawless.”',a:'<strong>Desire &amp; Temptation couple</strong><span class=\"rvw-sep\">•</span>Facebook'}];
+  var chips=[
+    ['Goes above and beyond to make the whole process seamless.','Desire · Facebook'],
+    ['Saves me a significant amount of money every time.','Desire · Facebook'],
+    ['Paid less for a master suite than a Junior Suite two years ago.','Desire Pearl · Facebook'],
+    ['Always gets us a great deal.','Desire Pearl · Facebook'],
+    ['Got us a great room we didn’t even see on the site.','Temptation · Facebook'],
+    ['Found us a luxury hotel when we arrived a day early.','Cancún · Facebook'],
+    ['Made us so comfortable with all our questions.','First-timers · Facebook'],
+    ['Every Desire and Temptation trip — all flawless.','Desire &amp; Temptation · Facebook']];
+  function wire(root){
+    var q=root.querySelector('.rvw-quote'),a=root.querySelector('.rvw-attr'),spot=root.querySelector('.rvw-spot'),dots=root.querySelector('.rvw-dots'),idx=0,timer;
+    if(!q||!spot||!dots)return;
+    featured.forEach(function(f,i){var b=document.createElement('button');b.setAttribute('aria-label','Review '+(i+1));if(i===0)b.className='rvw-on';b.onclick=function(){show(i);restart();};dots.appendChild(b);});
+    function show(i){idx=i;spot.classList.add('rvw-fading');setTimeout(function(){q.innerHTML=featured[i].q;a.innerHTML=featured[i].a;spot.classList.remove('rvw-fading');var ds=dots.children;for(var k=0;k<ds.length;k++){ds[k].className=k===i?'rvw-on':'';}},500);}
+    function restart(){clearInterval(timer);timer=setInterval(function(){show((idx+1)%featured.length);},6500);}
+    restart();
+  }
+  document.querySelectorAll('.rvw-rotator').forEach(wire);
+  var h=chips.map(function(c){return '<div class=\"rvw-chip\"><p>“'+c[0]+'”</p><span>'+c[1]+'</span></div>';}).join('');
+  document.querySelectorAll('.rvw-mq').forEach(function(m){m.innerHTML=h+h;});
 })();
 </script>
 </body>
