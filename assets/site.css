@@ -25,7 +25,7 @@ h1,h2,h3{font-family:var(--font-display);line-height:.9;letter-spacing:-.03em;te
 p{color:var(--color-muted)}
 ::selection{background:var(--color-accent);color:#fff}
 
-.section{padding:clamp(56px,8vw,120px) clamp(16px,4vw,48px)}
+.section{padding:clamp(40px,5.5vw,80px) clamp(16px,4vw,48px)}
 .inner{max-width:var(--max);margin:0 auto}
 .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--color-accent);margin:0}
 .lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:var(--color-muted);max-width:62ch;text-wrap:pretty}
