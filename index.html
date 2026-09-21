@@ -73,16 +73,7 @@ p{color:var(--color-muted)}
 .hero-title .yr{-webkit-text-stroke:2px color-mix(in srgb,var(--color-text) 84%,transparent);color:transparent;font-size:.55em}
 .hero-aside{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding-bottom:.3em}
 .hero-art{width:clamp(140px,16vw,240px);aspect-ratio:1;object-fit:cover;border:2px solid var(--color-text)}
-.hero-flip{width:clamp(140px,16vw,240px);aspect-ratio:1;flex:none;perspective:1000px;cursor:pointer}
-.hero-flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.15,.2,1);transform-style:preserve-3d}
-.hero-flip:hover .hero-flip-inner,.hero-flip:focus-within .hero-flip-inner,.hero-flip.flipped .hero-flip-inner{transform:rotateY(180deg)}
-.hero-flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--color-text);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.hero-flip-front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-flip-back{transform:rotateY(180deg);background:var(--color-accent);color:#fff;gap:10px;padding:14px}
-.flip-eyebrow{font-family:var(--font-display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;opacity:.9}
-.flip-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:clamp(18px,2.2vw,26px);color:#fff;text-decoration:none;line-height:1.05}
-.flip-cta svg{width:20px;height:20px}
-.flip-sub{font-size:12px;opacity:.92;letter-spacing:.02em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-facts{position:relative;margin:0 clamp(16px,4vw,48px);border-top:2px solid var(--color-text);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 24px;padding:16px 0 clamp(24px,4vw,48px);font-weight:800;font-size:clamp(15px,1.3vw,20px)}
 
 /* ticker */
@@ -256,22 +247,12 @@ p{color:var(--color-muted)}
         <h1 class="hero-title">FLIRT<span class="yr">2027</span></h1>
       </div>
       <div class="hero-aside">
-        <div class="hero-flip" role="group" aria-label="FLIRT 2027 — learn more">
-          <div class="hero-flip-inner">
-            <div class="hero-flip-face hero-flip-front">
-              <img src="assets/flirt27.png" alt="FLIRT 2027 key art">
-            </div>
-            <div class="hero-flip-face hero-flip-back">
-              <span class="flip-eyebrow">FLIRT 2027</span>
-              <a class="flip-cta" href="/concept-b/flirt/">Learn More
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </a>
-              <span class="flip-sub">Rooms, dates &amp; details</span>
-            </div>
-          </div>
+        <img class="hero-art" src="assets/flirt27.png" alt="FLIRT 2027 key art">
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://77lifestyle.com/book.html?event=feb-2027">Book Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <a class="btn btn-secondary" href="/concept-b/flirt/">Learn More</a>
         </div>
-        <a class="btn btn-primary" href="https://77lifestyle.com/book.html?event=feb-2027" style="padding:20px 32px;font-size:18px;min-width:220px">Book Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
     </div>
     <div class="hero-facts">
@@ -460,8 +441,6 @@ p{color:var(--color-muted)}
 
 /* hero video autoplay guard */
 (function(){var v=document.querySelector('.home-hero video');if(!v)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();
-(function(){var c=document.querySelector('.hero-flip');if(!c)return;var hover=window.matchMedia('(hover:hover)').matches;c.addEventListener('click',function(e){if(hover)return;if(e.target.closest('.flip-cta'))return;if(!c.classList.contains('flipped')){e.preventDefault();c.classList.add('flipped');}});document.addEventListener('click',function(e){if(!c.contains(e.target))c.classList.remove('flipped');});})();
-
 /* ticker */
 (function(){
   var el=document.getElementById('ticker');if(!el)return;
