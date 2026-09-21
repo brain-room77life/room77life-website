@@ -78,8 +78,6 @@ p{color:var(--color-muted)}
 .hero-flip:hover .hero-flip-inner,.hero-flip:focus-within .hero-flip-inner,.hero-flip.flipped .hero-flip-inner{transform:rotateY(180deg)}
 .hero-flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--color-text);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .hero-flip-front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.flip-hint{position:absolute;left:8px;bottom:8px;z-index:1;display:inline-flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--color-bg) 76%,transparent);color:var(--color-text);font-family:var(--font-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--color-text)}
-.flip-hint svg{width:14px;height:14px}
 .hero-flip-back{transform:rotateY(180deg);background:var(--color-accent);color:#fff;gap:10px;padding:14px}
 .flip-eyebrow{font-family:var(--font-display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;opacity:.9}
 .flip-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:clamp(18px,2.2vw,26px);color:#fff;text-decoration:none;line-height:1.05}
@@ -262,9 +260,6 @@ p{color:var(--color-muted)}
           <div class="hero-flip-inner">
             <div class="hero-flip-face hero-flip-front">
               <img src="assets/flirt27.png" alt="FLIRT 2027 key art">
-              <span class="flip-hint">Learn more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>
-              </span>
             </div>
             <div class="hero-flip-face hero-flip-back">
               <span class="flip-eyebrow">FLIRT 2027</span>
