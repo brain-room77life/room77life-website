@@ -304,17 +304,23 @@
           <div class="field"><label for="q-first">First name</label><input id="q-first" name="first_name" type="text" placeholder="First" required></div>
           <div class="field"><label for="q-last">Last name</label><input id="q-last" name="last_name" type="text" placeholder="Last" required></div>
           <div class="field full"><label for="q-email">Email</label><input id="q-email" name="email" type="email" placeholder="you@email.com" required></div>
-          <div class="field"><label for="q-resort">Resort</label>
-            <select id="q-resort" name="resort">
+          <div class="field full"><label for="q-resort">Choose a resort</label>
+            <select id="q-resort" name="resort" required>
               <option value="">Select one</option>
-              <option>Desire Riviera Maya</option>
-              <option>Desire Pearl</option>
+              <option>Desire Riviera Maya | Eden</option>
+              <option>Desire Riviera Maya | Pearl</option>
               <option>Temptation Cancún</option>
               <option>Hedonism II</option>
+              <option>Secrets Hideaway FL</option>
               <option>Not sure yet</option>
             </select>
           </div>
-          <div class="field"><label for="q-dates">Approx. dates</label><input id="q-dates" name="dates" type="text" placeholder="e.g. March 2027"></div>
+          <div class="field"><label for="q-depart">Departure date</label><input id="q-depart" name="departure_date" type="date"></div>
+          <div class="field"><label for="q-nights">Nights</label>
+            <select id="q-nights" name="nights">
+              <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>More</option>
+            </select>
+          </div>
           <div class="field"><label for="q-lssite">LS website</label>
             <select id="q-lssite" name="ls_website">
               <option value="">Select one</option>
@@ -460,9 +466,9 @@
 (function(){
   var s=document.getElementById('lead-form'),msg=document.getElementById('lead-msg');if(!s)return;
   s.addEventListener('submit',async function(ev){ev.preventDefault();var b=s.querySelector('button');b.disabled=!0;var ot=b.innerHTML;b.textContent='Sending…';msg.className='form-msg';
-    var f=s.elements;var resort=f['resort'].value||'Not specified';var dates=f['dates'].value||'Not specified';
+    var f=s.elements;var resort=f['resort'].value||'Not specified';var dep=f['departure_date'].value||'Not specified';var nights=f['nights'].value||'Not specified';
     var site=f['ls_website'].value||'Not given';var prof=f['ls_profile'].value||'Not given';var src=f['source'].value||'room77life.com';
-    var body='Resort quote request. Resort: '+resort+'. Approx dates: '+dates+'.\n\n— LS Website: '+site+'\n— LS Profile: '+prof;
+    var body='Resort quote request. Resort: '+resort+'. Departure date: '+dep+'. Nights: '+nights+'.\n\n— LS Website: '+site+'\n— LS Profile: '+prof;
     var payload={first_name:f['first_name'].value,last_name:f['last_name'].value,email:f['email'].value,interest:'Travel / Quote',source:src,message:body,hp_email:f['hp_email'].value};
     try{var r=await fetch('https://admin.room77life.com/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       if(r.ok){msg.textContent='Got it! We’ll email you back personally.';msg.className='form-msg ok';s.reset();}
