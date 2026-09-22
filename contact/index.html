@@ -192,7 +192,7 @@
     }
     var payload={first_name:first,last_name:last,email:f['email'].value,interest:f['interest'].value,source:f['source'].value,message:body,hp_email:f['hp_email'].value};
     try{var r=await fetch('https://admin.room77life.com/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-      if(r.ok){msg.textContent='Thanks! Your message is on its way — we&rsquo;ll be in touch soon.';msg.className='form-msg ok';s.reset();}
+      if(r.ok){msg.textContent='Thanks! Your message is on its way — we’ll be in touch soon.';msg.className='form-msg ok';s.reset();}
       else{var j=await r.json().catch(function(){return{};});throw new Error(j.error||'Something went wrong');}}
     catch(err){msg.textContent=err.message||'Something went wrong. Please try again.';msg.className='form-msg err';}
     finally{b.disabled=!1;b.innerHTML=ot;}});
