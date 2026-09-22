@@ -1,0 +1,182 @@
+{
+  "title": "Room 77 Guest Reviews — Carousel",
+  "note": "Carousel-ready pull-quotes curated from 43 real guest reviews (2021-2026). Quotes lightly trimmed for slide length; source wording preserved. Attribution handles are real community members. Use `themes` to build themed carousels, or `slides` for the full ordered deck.",
+  "brand": {
+    "name": "Room 77",
+    "hosts": "Lauren & Richard",
+    "events": "FLIRT (Feb) & SIN (Oct) — couples-only hotel takeovers, Isla Mujeres, Mexico",
+    "accent_color": "#fb187a",
+    "tone": "warm, sexy, welcoming, high-energy"
+  },
+  "themes": ["Welcoming & Not Cliquey", "First-Timers", "The Crowd & Vibe", "Best Event Yet", "They Book Again"],
+  "slides": [
+    {
+      "id": 1,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": true,
+      "quote": "We've all been to parties where people sit in their little friend group and never speak to others. This event isn't like that — everyone is so friendly and welcoming. They'll actually seek you out.",
+      "author": "FAMOUSUNKNOWN",
+      "event": "SIN 2025"
+    },
+    {
+      "id": 2,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": true,
+      "quote": "The LS can be a bit cliquish at times. Not here — everyone was so friendly. It's so laid back and inviting.",
+      "author": "2NEW2QUIT",
+      "event": "FLIRT 2025"
+    },
+    {
+      "id": 3,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": true,
+      "quote": "Newbies, experienced couples, outgoing, shy, younger, older, wilder, tamer — you're all made to feel welcome and embraced to just be your authentic self.",
+      "author": "SLUTSHARKS",
+      "event": "SIN 2024"
+    },
+    {
+      "id": 4,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": false,
+      "quote": "Everyone we spent time with — even in passing — made us feel so welcome and like family.",
+      "author": "TRISOME",
+      "event": "Flirtation 2024"
+    },
+    {
+      "id": 5,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": false,
+      "quote": "There was no pretension in the group — just nice, fun people having a great time.",
+      "author": "HOWIEDEWIT",
+      "event": "Flirtation 2024"
+    },
+    {
+      "id": 6,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": true,
+      "quote": "Some play and some don't, but it doesn't matter — because ALL feel safe, included and fulfilled.",
+      "author": "VELVETVIBES",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 7,
+      "theme": "Welcoming & Not Cliquey",
+      "featured": false,
+      "quote": "Even though their parties grow each event, they keep it personal and try hard to know every guest.",
+      "author": "TOMLYDIA",
+      "event": "FLIRT 2025"
+    },
+    {
+      "id": 8,
+      "theme": "First-Timers",
+      "featured": true,
+      "quote": "We're new to the LS and had trepidation about attending. Never should have worried — this is the most welcoming group of people you can imagine!",
+      "author": "FUNCOUPLE23832",
+      "event": "FLIRT 2025"
+    },
+    {
+      "id": 9,
+      "theme": "First-Timers",
+      "featured": false,
+      "quote": "We're new to the LS and were really nervous. We felt free to do what we were comfortable with and never felt pressured.",
+      "author": "WHYNOTYOLO",
+      "event": "Flirtation 2024"
+    },
+    {
+      "id": 10,
+      "theme": "First-Timers",
+      "featured": true,
+      "quote": "SIN was our first Room 77 event. Lauren and Richard met us with open arms like we were long-time friends. Do not hesitate.",
+      "author": "KINKYSTAGVIXEN10",
+      "event": "SIN 2025"
+    },
+    {
+      "id": 11,
+      "theme": "First-Timers",
+      "featured": false,
+      "quote": "For us and many other newbies who went not knowing anyone, they made sure everyone felt welcome and introduced people to each other.",
+      "author": "DADDYDOMSUBMRS",
+      "event": "SIN 2024"
+    },
+    {
+      "id": 12,
+      "theme": "First-Timers",
+      "featured": true,
+      "quote": "It began with the Room 77 podcast, which became a guidebook to our journey. With every episode, our fears subsided.",
+      "author": "VELVETVIBES",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 13,
+      "theme": "The Crowd & Vibe",
+      "featured": true,
+      "quote": "The vibe they've created attracts some of the sexiest, most genuine people we've ever encountered.",
+      "author": "RNLCOUPLE",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 14,
+      "theme": "The Crowd & Vibe",
+      "featured": false,
+      "quote": "It attracts the sexiest, friendliest crowd in the lifestyle. We go back twice a year to see great friends and make new ones.",
+      "author": "EASYENERGY",
+      "event": "SIN 2024"
+    },
+    {
+      "id": 15,
+      "theme": "The Crowd & Vibe",
+      "featured": true,
+      "quote": "Forget Desire, Temptation, and Hedo — nobody comes close to the vibe of these Room 77 events.",
+      "author": "SLUTSHARKS",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 16,
+      "theme": "Best Event Yet",
+      "featured": true,
+      "quote": "Best event yet — and nope, not just making it up. R77 and crew continue to create such special events.",
+      "author": "NINETYFOUR",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 17,
+      "theme": "Best Event Yet",
+      "featured": false,
+      "quote": "These guys have worked out the secret sauce. One of the best party nights we've been a part of — and we've seen some stuff in 15 years of this!",
+      "author": "TRIUS",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 18,
+      "theme": "Best Event Yet",
+      "featured": false,
+      "quote": "Hands down the best takeover. Well organized, awesome people, great entertainment.",
+      "author": "FUN4US21",
+      "event": "SIN 2024"
+    },
+    {
+      "id": 19,
+      "theme": "Best Event Yet",
+      "featured": false,
+      "quote": "They honestly put on THE BEST party. If you're thinking about going — STOP. Just do it. Book it now.",
+      "author": "LALANRICO",
+      "event": "Flirtation 2024"
+    },
+    {
+      "id": 20,
+      "theme": "They Book Again",
+      "featured": true,
+      "quote": "We couldn't count how many couples booked SIN in October before even heading home.",
+      "author": "RNLCOUPLE",
+      "event": "FLIRT 2026"
+    },
+    {
+      "id": 21,
+      "theme": "They Book Again",
+      "featured": false,
+      "quote": "It was our first Room 77 event — and while there, we signed up for the next takeover in February.",
+      "author": "SCONAH01",
+      "event": "SIN 2024"
+    }
+  ]
+}
