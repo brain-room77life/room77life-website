@@ -16,6 +16,26 @@
   .hero-media{display:flex;justify-content:center}
   .hero-portrait{width:min(330px,74vw);aspect-ratio:9/16;object-fit:cover;display:block;border-radius:18px;border:1px solid rgba(255,255,255,.16);box-shadow:0 26px 74px rgba(0,0,0,.6);background:#000}
   @media(max-width:860px){.hero-split-inner{grid-template-columns:1fr;gap:clamp(28px,7vw,44px)}.hero-media{justify-content:flex-start}.hero-portrait{width:min(300px,80vw)}}
+
+/* Event FAQs restored from the September 15 site backup. */
+.event-faq{border-top:1px solid var(--color-divider);scroll-margin-top:100px}
+.event-faq .faq-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.event-faq h2{font-size:clamp(36px,4.4vw,64px);line-height:1.04;max-width:13ch;margin:0 0 22px}
+.event-faq .lead{max-width:30ch}
+.event-faq .faq-contact{margin-top:24px;font-size:16px}
+.event-faq a{text-decoration:underline;text-underline-offset:.2em}
+.event-faq .faq-questions{border-top:2px solid var(--color-text)}
+.event-faq details{border-bottom:1px solid var(--color-divider)}
+.event-faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-weight:700;font-size:clamp(17px,1.4vw,20px);line-height:1.4}
+.event-faq summary::-webkit-details-marker{display:none}
+.event-faq .faq-mark{color:var(--color-accent);font-size:28px;line-height:1;flex:none}
+.event-faq .faq-minus{display:none}
+.event-faq details[open] .faq-plus{display:none}
+.event-faq details[open] .faq-minus{display:inline}
+.event-faq .faq-answer{padding:0 32px 24px 0;max-width:72ch;font-size:17px;line-height:1.65;text-wrap:pretty}
+.event-faq summary:focus-visible,.event-faq a:focus-visible{outline:3px solid var(--color-text);outline-offset:5px}
+.event-faq summary:hover{color:var(--color-accent)}
+@media(max-width:760px){.event-faq .faq-layout{grid-template-columns:1fr}.event-faq .lead{max-width:50ch}.event-faq .faq-answer{padding-right:0}}
 </style>
 
 <link rel="canonical" href="https://room77life.com/sin/">
@@ -117,6 +137,51 @@
     </div>
   </section>
 
+  <!-- EVENT FAQ -->
+  <section class="section event-faq" id="faq" aria-labelledby="faq-heading">
+    <div class="inner faq-layout">
+      <div>
+        <h2 id="faq-heading">Event FAQs.</h2>
+        <p class="lead">A few things to know about our SIN takeover on Isla Mujeres.</p>
+        <p class="faq-contact">Have another question? <a href="/contact/">Contact us</a>.</p>
+      </div>
+      <div class="faq-questions">
+        <details>
+          <summary><span>How many couples attend the takeover?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">The takeover will end up hosting between 150 to 200 people between the main hotel and overflow hotel. Intimate. Not overwhelming but a great number to make new friends. For reference, Desire Pearl Resort has around 196 people at 100% capacity.</p>
+        </details>
+        <details>
+          <summary><span>Are threesomes / singles allowed?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">You may come as a threesome! We must approve (for the safety of the guests) all threesomes before booking is final. Singles may also be considered, however you can not book as one. <a href="mailto:touchedbylnr@gmail.com">Email us</a> if you are interested in either.</p>
+        </details>
+        <details>
+          <summary><span>What is the name of the hotel for the takeover?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">For the privacy of the hotel and our guests and their safety, the name of the hotel is disclosed only to guests upon booking confirmation.</p>
+        </details>
+        <details>
+          <summary><span>Is food and alcohol included?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">Yes, this is an all-inclusive event. Room service is also included, as well as late night snacks. We also include a premium vodka, tequila, rum, and whiskey. Event passes are also all inclusive.</p>
+        </details>
+        <details>
+          <summary><span>What is the average age of attendees?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">We do not collect ages of the guests, however, most guests appear to be our age, 40s to 50 years old. There will be some guests in their 30s.</p>
+        </details>
+        <details>
+          <summary><span>Is the takeover recommended for newbies or first-timers?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">Absolutely! We always have newbies or first-timers at our events. We enjoy creating a safe space for all levels of experience. Even couples who aren't participating in the lifestyle, but love the sexy vibe, come back to our events. It takes all couples at different places on their journey to complete the unique vibe at Room 77.</p>
+        </details>
+        <details>
+          <summary><span>What time can we arrive on the first day?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">The hotel officially becomes clothing-optional at 3pm on the first day. You may arrive before that to check in. Your bags will be stored until the rooms are ready. Lunch is included on the first day.</p>
+        </details>
+        <details>
+          <summary><span>What is the vibe like?</span><span class="faq-mark" aria-hidden="true"><span class="faq-plus">+</span><span class="faq-minus">&minus;</span></span></summary>
+          <p class="faq-answer">The vibe is very friendly and inclusive. Everyone who is going to the party usually starts in a group chat beginning 3 months before the event.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- PINK CTA -->
   <section class="section pink">
     <div class="inner" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);align-items:end">
@@ -139,7 +204,7 @@
       <a href="/">ROOM <span class="text-accent">77</span></a>
       <p>Couples-only* lifestyle events, travel experiences, and real conversations — with Lauren &amp; Richard.</p>
     </div>
-    <div><h4>Events</h4><ul><li><a href="/flirt/">FLIRT 2027</a></li><li><a href="/sin/">SIN 2026</a></li></ul></div>
+    <div><h4>Events</h4><ul><li><a href="/flirt/">FLIRT 2027</a></li><li><a href="/sin/">SIN 2026</a></li><li><a href="#faq">Event FAQs</a></li></ul></div>
     <div><h4>Explore</h4><ul><li><a href="/podcast/">Podcast</a></li><li><a href="/travel/">Book Resorts &amp; Cruises</a></li><li><a href="/partners/">Partners</a></li><li><a href="https://77lifestyle.com/">Shop</a></li></ul></div>
     <div><h4>Connect</h4><ul><li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Become a Member</a></li><li><a href="/contact/">Contact</a></li><li><a href="https://www.patreon.com/room77" target="_blank" rel="noopener">Patreon</a></li></ul></div>
   </div>
