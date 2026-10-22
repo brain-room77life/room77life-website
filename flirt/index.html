@@ -52,6 +52,9 @@
   .promo-wrap{display:flex;justify-content:center}
   .promo-video{width:min(360px,84vw);aspect-ratio:9/16;background:#000;border:1px solid var(--color-divider);border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.55)}
   .promo-video video{width:100%;height:100%;object-fit:cover;display:block}
+  /* "See FLIRT in motion" section background (IMG_7569 sunset heart) */
+  .promo-exp{position:relative;background-color:var(--color-bg);background-image:linear-gradient(180deg,rgba(7,6,7,.52) 0%,rgba(7,6,7,.60) 55%,var(--color-bg) 100%),url("/assets/flirt-motion-bg.webp");background-repeat:no-repeat,no-repeat;background-position:center,center;background-size:cover,cover;background-attachment:scroll,fixed}
+  @media(max-width:760px){.promo-exp{background-attachment:scroll,scroll}}
   /* "The full experience" section background (BA-FLIRT-2026, 1603x731) */
   .full-exp{position:relative;background-color:var(--color-bg);background-image:linear-gradient(180deg,rgba(7,6,7,.30) 0%,rgba(7,6,7,.72) 62%,var(--color-bg) 100%),url("/assets/BA-FLIRT-2026.JPG");background-repeat:no-repeat,no-repeat;background-position:top center,top center;background-size:cover,cover}
   @media(max-width:760px){
@@ -158,7 +161,7 @@
   </section>
 
   <!-- PROMO VIDEO -->
-  <section class="section" style="border-top:2px solid var(--color-divider)">
+  <section class="section promo-exp" style="border-top:2px solid var(--color-divider)">
     <div class="inner sec-head">
       <div>
         <p class="eyebrow">Watch</p>
