@@ -20,6 +20,21 @@
   .room-card .rc-meta{font-size:13px;color:var(--color-muted)}
   .room-card .rc-price{margin-top:auto;padding-top:12px;font-weight:800;font-size:22px;color:var(--color-accent)}
   .room-card .rc-price small{display:block;font-weight:600;font-size:12px;color:var(--color-dim);margin-top:3px}
+  /* In-card photo gallery (swipe on touch, arrows on desktop) */
+  .rc-gallery{position:relative;aspect-ratio:4/3;background:#000;overflow:hidden}
+  .rc-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .rc-track::-webkit-scrollbar{display:none}
+  .rc-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;scroll-snap-align:center}
+  .rc-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s,background .2s}
+  .room-card:hover .rc-arrow{opacity:1}
+  .rc-arrow:hover{background:rgba(0,0,0,.72)}
+  .rc-arrow.prev{left:10px}.rc-arrow.next{right:10px}
+  .rc-count{position:absolute;top:10px;right:10px;z-index:2;background:rgba(0,0,0,.5);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px}
+  .rc-dots{position:absolute;left:0;right:0;bottom:10px;z-index:2;display:flex;justify-content:center;gap:6px;pointer-events:none}
+  .rc-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);transition:background .2s,transform .2s}
+  .rc-dots i.on{background:#fff;transform:scale(1.35)}
+  .rc-book{margin-top:14px;align-self:flex-start}
+  @media(hover:none){.rc-arrow{display:none}}
   .soldout-rows{max-width:var(--max);margin:clamp(18px,2vw,28px) auto 0;border-top:2px solid var(--color-rule)}
   .soldout-rows .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--color-divider);opacity:.55}
   .soldout-rows .r-name{font-family:var(--font-display);font-size:clamp(17px,1.5vw,20px);letter-spacing:-.02em}
@@ -188,14 +203,28 @@
     </div>
     <div class="inner rooms-split">
       <div class="rooms-grid">
-        <a class="room-card" href="https://77lifestyle.com/book.html?event=feb-2027">
-          <img class="ph" src="/assets/flirt-ocean.webp" alt="Jr. Suite Ocean View – Oversized King" loading="lazy">
+        <div class="room-card">
+          <div class="rc-gallery">
+            <div class="rc-count"><span class="cur">1</span>/6</div>
+            <div class="rc-track">
+              <img src="/assets/flirt-ocean.webp" alt="Jr. Suite Ocean View – Oversized King" loading="lazy">
+              <img src="/assets/flirt-ocean-bed.webp" alt="Oversized King bed with FLIRT pillows" loading="lazy">
+              <img src="/assets/flirt-ocean-suite.webp" alt="Bedroom with ocean view, vanity and shower" loading="lazy">
+              <img src="/assets/flirt-ocean-bath.webp" alt="Double-vanity bathroom" loading="lazy">
+              <img src="/assets/flirt-ocean-shower.webp" alt="Glass walk-in shower" loading="lazy">
+              <img src="/assets/flirt-ocean-shower2.webp" alt="Walk-in rain shower" loading="lazy">
+            </div>
+            <button class="rc-arrow prev" type="button" aria-label="Previous photo">&#8249;</button>
+            <button class="rc-arrow next" type="button" aria-label="Next photo">&#8250;</button>
+            <div class="rc-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
           <div class="rc-body">
             <span class="rc-name">Jr. Suite Ocean View - Oversized King</span>
             <span class="rc-meta">430 sq ft · Ocean view · Oversized King</span>
             <span class="rc-price">$3,577 <small>per room · 5 nights, all-inclusive for 2</small></span>
+            <a class="btn btn-primary rc-book" href="https://77lifestyle.com/book.html?event=feb-2027">Book this room</a>
           </div>
-        </a>
+        </div>
       </div>
       <div class="soldout-col">
         <p class="soldout-head">Sold out</p>
@@ -339,6 +368,7 @@
 (function(){var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}})();
 (function(){var el=document.getElementById('ticker');if(!el)return;var items=['FLIRT 2027','Feb 15–20','5 nights','All-inclusive','Couples only*','Isla Mujeres','Oversized King','Book now'];function b(){return items.map(function(t){return '<span>'+t+'</span><b>&bull;</b>';}).join('');}el.innerHTML=b()+b();})();
 (function(){var v=document.querySelector('.page-hero video.hero-bg');if(!v)return;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+(function(){document.querySelectorAll('.rc-gallery').forEach(function(g){var track=g.querySelector('.rc-track');if(!track)return;var dots=g.querySelectorAll('.rc-dots i'),cur=g.querySelector('.rc-count .cur');function idx(){return track.clientWidth?Math.round(track.scrollLeft/track.clientWidth):0;}function upd(){var i=idx();dots.forEach(function(d,k){d.classList.toggle('on',k===i);});if(cur)cur.textContent=i+1;}track.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});g.querySelectorAll('.rc-arrow').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var dir=b.classList.contains('next')?1:-1;track.scrollBy({left:dir*track.clientWidth,behavior:'smooth'});});});upd();});})();
 </script>
 </body>
 </html>
