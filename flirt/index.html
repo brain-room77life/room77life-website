@@ -42,7 +42,16 @@
   /* Rooms: available card beside the sold-out list (desktop); stacks on mobile */
   .rooms-split{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(24px,4vw,56px);max-width:var(--max);margin:0 auto;align-items:start}
   .rooms-split .rooms-grid,.rooms-split .soldout-rows{margin:0}
-  .soldout-head{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-muted);margin:0 0 2px}
+  .soldout-head{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-muted);margin:14px 0 2px}
+  /* Available room shown as a list row (not a photo card) */
+  .avail-rows{max-width:var(--max);margin:0 auto;border-top:2px solid var(--color-rule)}
+  .avail-rows .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--color-divider);text-decoration:none;color:inherit;transition:border-color .2s}
+  .avail-rows .row:hover{border-bottom-color:var(--color-accent)}
+  .avail-rows .r-name{font-family:var(--font-display);font-size:clamp(17px,1.5vw,20px);letter-spacing:-.02em}
+  .avail-rows .row:hover .r-name{color:var(--color-accent)}
+  .avail-rows .r-meta{display:block;font-size:13px;color:var(--color-muted);margin-top:4px}
+  .avail-rows .r-price{font-weight:800;font-size:20px;color:var(--color-accent);white-space:nowrap;text-align:right}
+  .avail-rows .r-price small{display:block;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-dim);margin-top:3px}
   @media(max-width:760px){.rooms-split{grid-template-columns:1fr;gap:28px}}
   /* Vibe / experience image band */
   .vibe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,18px);max-width:var(--max);margin:0 auto}
@@ -199,9 +208,9 @@
     <div class="inner sec-head">
       <div>
         <p class="eyebrow">Rooms &amp; Rates</p>
-        <h2>Your suite awaits.</h2>
+        <h2 style="display:inline-flex;align-items:center;flex-wrap:wrap;gap:14px">Your suite awaits. <span style="font-family:var(--font-base,'Lato',sans-serif);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:999px;padding:6px 13px">2 rooms left</span></h2>
       </div>
-      <p class="lead">Prices are per room, all-inclusive for two, for all five nights. Ask about the &ldquo;Oversized King Bed&rdquo; — a concept by Room 77. Rates start at <strong style="color:var(--color-text)">$3,577* per room</strong>.</p>
+      <p class="lead">Prices are per room, all-inclusive for two, for all five nights. Ask about the &ldquo;Oversized King Bed&rdquo; — a concept by Room 77. Rates start at <strong style="color:var(--color-text)">$3,077* per room</strong>.</p>
     </div>
     <div class="inner rooms-split">
       <div class="rooms-grid">
@@ -229,12 +238,14 @@
         </div>
       </div>
       <div class="soldout-col">
+        <div class="avail-rows">
+          <a class="row" href="https://77lifestyle.com/book.html?event=feb-2027">
+            <span><span class="r-name">Jr. Suite Lagoon View - Oversized King</span><span class="r-meta">430 sq ft · Lagoon / garden view · Oversized King</span></span>
+            <span class="r-price">$3,077 <small>Last room</small></span>
+          </a>
+        </div>
         <p class="soldout-head">Sold out</p>
         <div class="soldout-rows">
-          <div class="row">
-            <span><span class="r-name">Jr. Suite Lagoon View - Oversized King</span><span class="r-meta">430 sq ft · Lagoon / garden view · Oversized King</span></span>
-            <span class="r-cta">Sold out</span>
-          </div>
           <div class="row">
             <span><span class="r-name">1 Bedroom Suite - King</span><span class="r-meta">1,230 sq ft · Living · dining · kitchen · pool view</span></span>
             <span class="r-cta">Sold out</span>
