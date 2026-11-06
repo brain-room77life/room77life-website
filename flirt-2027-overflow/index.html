@@ -35,6 +35,9 @@
   .compare td:not(:first-child),.compare th:not(:first-child){text-align:center;white-space:nowrap}
   .compare .yes{color:var(--color-accent);font-weight:700}
   .compare .no{color:var(--color-dim)}
+  .ntog{display:inline-flex;border:1px solid var(--color-divider);border-radius:999px;padding:4px;background:var(--color-surface)}
+  .ntog-btn{appearance:none;border:0;background:transparent;color:var(--color-muted);font-family:var(--font-display);font-size:14px;letter-spacing:.02em;padding:10px 22px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+  .ntog-btn.is-on{background:var(--color-accent);color:#fff}
   .page-hero.has-img>video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) grayscale(.15);z-index:0}
   @media(max-width:560px){.compare{overflow-x:auto}.compare table{min-width:460px}}
 </style>
@@ -90,7 +93,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
       <div class="factbar">
-        <span>Feb 15–20, 2027</span><span>5 nights</span><span>King-bed Garden Room · next door</span><span>Isla Mujeres, MX</span>
+        <span>Feb 15–20, 2027</span><span>4 or 5 nights</span><span>King-bed Garden Room · next door</span><span>Isla Mujeres, MX</span>
       </div>
     </div>
   </header>
@@ -102,10 +105,10 @@
         <p class="eyebrow">How it works</p>
         <h2>Two ways to join us next door.</h2>
       </div>
-      <p class="lead">Every package includes five all-inclusive nights in a Garden Room at the hotel next door, plus a pass into the main-hotel FLIRT event. The only question is where you want to eat and drink — the difference is your event pass.</p>
+      <p class="lead">Every package includes four or five all-inclusive nights in a King-bed Garden Room at the hotel next door, plus a pass into the main-hotel FLIRT event. The only question is where you want to eat and drink — the difference is your event pass.</p>
     </div>
     <div class="inner cards">
-      <div class="card"><span class="n">01</span><h3>Stay next door</h3><p>A five-night, all-inclusive Garden Room steps from the main hotel. Food and drinks included at your hotel.</p></div>
+      <div class="card"><span class="n">01</span><h3>Stay next door</h3><p>A four- or five-night, all-inclusive King-bed Garden Room steps from the main hotel. Food and drinks included at your hotel.</p></div>
       <div class="card"><span class="n">02</span><h3>Get your pass</h3><p>Your event pass is your access to the FLIRT takeover next door — the parties, theme nights, and daytime events.</p></div>
       <div class="card"><span class="n">03</span><h3>Pick your level</h3><p>Alcohol-only keeps your dining at the overflow hotel. All-inclusive lets you eat <em>and</em> drink at both hotels.</p></div>
     </div>
@@ -116,19 +119,26 @@
     <div class="inner sec-head">
       <div>
         <p class="eyebrow">Choose your package</p>
-        <h2>Garden Room · 5 nights</h2>
+        <h2>Garden Room · 4 or 5 nights</h2>
       </div>
-      <p class="lead">Both prices are per couple for the full five nights and include your all-inclusive Garden Room next door plus your FLIRT event pass.</p>
+      <p class="lead">Pick your length of stay below. Both prices are per couple and include your all-inclusive King-bed Garden Room next door plus your FLIRT event pass.</p>
+    </div>
+
+    <div class="inner" style="display:flex;justify-content:center;margin:0 0 clamp(24px,3vw,36px)">
+      <div class="ntog" role="tablist" aria-label="Length of stay">
+        <button type="button" class="ntog-btn is-on" data-nights="5" aria-selected="true">5 nights</button>
+        <button type="button" class="ntog-btn" data-nights="4" aria-selected="false">4 nights</button>
+      </div>
     </div>
 
     <div class="tiers">
       <!-- OPTION 1 -->
-      <div class="tier">
+      <div class="tier" data-pkg="alcohol">
         <p class="t-eyebrow">Option 1</p>
         <h3 class="t-name">Garden Room<br>+ Alcohol-Only Event Pass</h3>
-        <div class="t-price">$3,077<small>per couple · 5 nights · all-inclusive next door</small></div>
+        <div class="t-price"><span class="t-amt">$3,077</span><small>per couple · <span class="t-nts">5</span> nights · all-inclusive next door</small></div>
         <ul class="t-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Five all-inclusive nights in a King-bed Garden Room next door</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="t-nword">Five</span> all-inclusive nights in a King-bed Garden Room next door</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full access to the main-hotel FLIRT event &amp; parties</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All your <strong>drinks</strong> included at both hotels</li>
           <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Dining is at the overflow hotel only</li>
@@ -140,13 +150,13 @@
       </div>
 
       <!-- OPTION 2 -->
-      <div class="tier feature">
+      <div class="tier feature" data-pkg="allinclusive">
         <span class="badge">Eat &amp; drink everywhere</span>
         <p class="t-eyebrow">Option 2</p>
         <h3 class="t-name">Garden Room<br>+ All-Inclusive Event Pass</h3>
-        <div class="t-price">$3,377<small>per couple · 5 nights · all-inclusive next door</small></div>
+        <div class="t-price"><span class="t-amt">$3,377</span><small>per couple · <span class="t-nts">5</span> nights · all-inclusive next door</small></div>
         <ul class="t-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Five all-inclusive nights in a King-bed Garden Room next door</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="t-nword">Five</span> all-inclusive nights in a King-bed Garden Room next door</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full access to the main-hotel FLIRT event &amp; parties</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All your <strong>drinks</strong> included at both hotels</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full <strong>dining</strong> at both hotels — eat at the main hotel too</li>
@@ -162,10 +172,10 @@
     <div class="compare">
       <table>
         <thead>
-          <tr><th>What&rsquo;s included</th><th>Alcohol-Only<br>$3,077</th><th>All-Inclusive<br>$3,377</th></tr>
+          <tr><th>What&rsquo;s included</th><th>Alcohol-Only</th><th>All-Inclusive</th></tr>
         </thead>
         <tbody>
-          <tr><td>King-bed Garden Room next door · 5 nights, all-inclusive</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>King-bed Garden Room next door, all-inclusive (4 or 5 nights)</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Access to the main-hotel FLIRT event &amp; parties</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Drinks at <strong>both</strong> hotels</td><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><td>Dining at the overflow hotel</td><td class="yes">✓</td><td class="yes">✓</td></tr>
@@ -179,14 +189,14 @@
         <div>
           <p class="t-eyebrow" style="margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-muted)">Want the water?</p>
           <h3 style="font-family:var(--font-display);font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.1;margin:0">Ocean View upgrade available</h3>
-          <p style="color:var(--color-muted);font-size:15px;margin:8px 0 0;max-width:46ch">A King-bed Ocean View room, same five-night stay. Ask us for pricing and availability.</p>
+          <p style="color:var(--color-muted);font-size:15px;margin:8px 0 0;max-width:46ch">A King-bed Ocean View room, available for 4 or 5 nights. Ask us for pricing and availability.</p>
         </div>
         <a class="btn btn-secondary" href="/contact/?interest=FLIRT%202027%20Waitlist">Ask about the upgrade
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
     </div>
 
-    <p class="inner" style="max-width:60ch;color:var(--color-muted);font-size:14px;margin-top:28px">Prices are per couple for five nights and include the all-inclusive Garden Room at the hotel next door plus your FLIRT 2027 event pass. *Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
+    <p class="inner" style="max-width:60ch;color:var(--color-muted);font-size:14px;margin-top:28px">Prices are per couple for your chosen 4- or 5-night stay and include the all-inclusive King-bed Garden Room at the hotel next door plus your FLIRT 2027 event pass. *Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
   </section>
 </main>
 
@@ -209,18 +219,28 @@
 <script>
 (function(){var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}})();
 (function(){
-  // FLIRT 2027 overflow checkout deep links (77lifestyle.com).
-  // Fill these with the real checkout URLs once the two Garden Room products exist in feb-2027.
+  // FLIRT 2027 overflow — 77lifestyle.com checkout room ids + prices, by package & nights.
   // Format: https://77lifestyle.com/checkout.html?event=feb-2027&type=full&room=<room_type_id>
-  var CHECKOUT = {
-    alcohol:       'https://77lifestyle.com/checkout.html?event=feb-2027&type=full&room=29',  // Garden Room + Alcohol-Only Event Pass — $3,077
-    allinclusive:  'https://77lifestyle.com/checkout.html?event=feb-2027&type=full&room=30'   // Garden Room + All-Inclusive Event Pass — $3,377
-  };
-  document.querySelectorAll('[data-checkout]').forEach(function(a){
-    var u = CHECKOUT[a.getAttribute('data-checkout')];
-    if(u){ a.setAttribute('href', u); }
-    else { a.addEventListener('click', function(ev){ ev.preventDefault(); window.location.href='/contact/?interest=FLIRT%202027%20Waitlist'; }); }
+  var ROOM  = { alcohol:{5:29,4:31}, allinclusive:{5:30,4:32} };
+  var PRICE = { alcohol:{5:'$3,077',4:'$2,477'}, allinclusive:{5:'$3,377',4:'$2,677'} };
+  function url(pkg,n){ return 'https://77lifestyle.com/checkout.html?event=feb-2027&type=full&room='+ROOM[pkg][n]; }
+  function setNights(n){
+    document.querySelectorAll('.tier[data-pkg]').forEach(function(tier){
+      var pkg=tier.getAttribute('data-pkg');
+      var amt=tier.querySelector('.t-amt'); if(amt) amt.textContent=PRICE[pkg][n];
+      tier.querySelectorAll('.t-nts').forEach(function(s){ s.textContent=n; });
+      tier.querySelectorAll('.t-nword').forEach(function(s){ s.textContent=(n===5?'Five':'Four'); });
+      var btn=tier.querySelector('[data-checkout]'); if(btn) btn.setAttribute('href',url(pkg,n));
+    });
+    document.querySelectorAll('.ntog-btn').forEach(function(b){
+      var on=parseInt(b.getAttribute('data-nights'),10)===n;
+      b.classList.toggle('is-on',on); b.setAttribute('aria-selected',on?'true':'false');
+    });
+  }
+  document.querySelectorAll('.ntog-btn').forEach(function(b){
+    b.addEventListener('click',function(){ setNights(parseInt(b.getAttribute('data-nights'),10)); });
   });
+  setNights(5);
 })();
 </script>
 </body>
