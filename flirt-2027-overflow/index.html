@@ -38,6 +38,18 @@
   .ntog{display:inline-flex;border:1px solid var(--color-divider);border-radius:999px;padding:4px;background:var(--color-surface)}
   .ntog-btn{appearance:none;border:0;background:transparent;color:var(--color-muted);font-family:var(--font-display);font-size:14px;letter-spacing:.02em;padding:10px 22px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
   .ntog-btn.is-on{background:var(--color-accent);color:#fff}
+  .pp-label{font-family:var(--font-display);font-size:clamp(16px,1.4vw,20px);letter-spacing:-.01em;color:var(--color-text);max-width:var(--max);margin:0 auto 18px}
+  .pp-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px);max-width:var(--max);margin:0 auto}
+  .pp-half{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,22px);max-width:660px;margin:0 auto 0 0}
+  .pp-plan{position:relative;background:var(--color-surface);border:1px solid var(--color-divider);border-radius:14px;padding:clamp(22px,2vw,30px);display:flex;flex-direction:column;gap:6px;text-align:center}
+  .pp-plan.feature{border-color:var(--color-accent)}
+  .pp-save{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--color-accent);color:#fff;font-family:var(--font-display);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
+  .pp-dur{font-family:var(--font-display);font-size:clamp(17px,1.5vw,21px);letter-spacing:-.01em;margin:0}
+  .pp-price{font-weight:800;font-size:clamp(30px,3.4vw,40px);color:var(--color-accent);line-height:1;margin:4px 0}
+  .pp-price small{display:block;font-weight:600;font-size:12px;color:var(--color-dim);margin-top:5px}
+  .pp-note{font-size:13px;color:var(--color-muted);margin:0 0 8px;min-height:34px}
+  .pp-btn{width:100%;justify-content:center;margin-top:auto}
+  @media(max-width:640px){.pp-plans{grid-template-columns:1fr}.pp-half{grid-template-columns:1fr;max-width:none}}
   .page-hero.has-img>video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) grayscale(.15);z-index:0}
   @media(max-width:560px){.compare{overflow-x:auto}.compare table{min-width:460px}}
 </style>
@@ -197,6 +209,65 @@
     </div>
 
     <p class="inner" style="max-width:60ch;color:var(--color-muted);font-size:14px;margin-top:28px">Prices are per couple for your chosen 4- or 5-night stay and include the all-inclusive King-bed Garden Room at the hotel next door plus your FLIRT 2027 event pass. *Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
+  </section>
+
+  <!-- PARTY PASSES (no room) -->
+  <section class="section" id="party-passes" style="padding-top:0">
+    <div class="inner sec-head">
+      <div>
+        <p class="eyebrow">Not staying over?</p>
+        <h2>Just want the party?</h2>
+      </div>
+      <p class="lead">Event party passes get you into the FLIRT 2027 takeover without a room — all-inclusive, per couple, per day. From $100* per couple.</p>
+    </div>
+
+    <!-- FULL PARTY PASS — subscription-style table -->
+    <div class="inner">
+      <p class="pp-label">Full Party Pass — day &amp; night, all-inclusive</p>
+      <div class="pp-plans">
+        <div class="pp-plan">
+          <p class="pp-dur">1 Day</p>
+          <p class="pp-price">$200<small>$200 / day</small></p>
+          <p class="pp-note">The full party, day and night — one day.</p>
+          <a class="btn btn-secondary pp-btn" href="https://77lifestyle.com/checkout.html?event=feb-2027&amp;addons=33">Reserve</a>
+        </div>
+        <div class="pp-plan">
+          <span class="pp-save">Save 5%</span>
+          <p class="pp-dur">3 Days</p>
+          <p class="pp-price">$570<small>$190 / day</small></p>
+          <p class="pp-note">Three full days of the party, day and night.</p>
+          <a class="btn btn-secondary pp-btn" href="https://77lifestyle.com/checkout.html?event=feb-2027&amp;addons=36">Reserve</a>
+        </div>
+        <div class="pp-plan feature">
+          <span class="pp-save">Best value · Save 7.5%</span>
+          <p class="pp-dur">5 Days</p>
+          <p class="pp-price">$925<small>$185 / day</small></p>
+          <p class="pp-note">The whole event — every day and night.</p>
+          <a class="btn btn-primary pp-btn" href="https://77lifestyle.com/checkout.html?event=feb-2027&amp;addons=37">Reserve</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALF-DAY PASSES -->
+    <div class="inner" style="margin-top:clamp(30px,3.4vw,48px)">
+      <p class="pp-label">Prefer part of the day? — $100 per couple, per day</p>
+      <div class="pp-half">
+        <div class="pp-plan">
+          <p class="pp-dur">Day Pass</p>
+          <p class="pp-price">$100<small>per couple · per day</small></p>
+          <p class="pp-note">9am–6pm · breakfast through happy hour.</p>
+          <a class="btn btn-secondary pp-btn" href="https://77lifestyle.com/checkout.html?event=feb-2027&amp;addons=34">Reserve</a>
+        </div>
+        <div class="pp-plan">
+          <p class="pp-dur">Night Pass</p>
+          <p class="pp-price">$100<small>per couple · per day</small></p>
+          <p class="pp-note">6pm–3am · dinner &amp; the night party.</p>
+          <a class="btn btn-secondary pp-btn" href="https://77lifestyle.com/checkout.html?event=feb-2027&amp;addons=35">Reserve</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="inner" style="max-width:66ch;color:var(--color-muted);font-size:14px;margin-top:28px">*Party pass only — does <strong>not</strong> include a room. Full Party Pass is per couple, per day; the 3-day and 5-day packages are billed once (discount vs. buying day-by-day). Day and Night passes cover a partial day (9am–6pm or 6pm–3am), per couple, per day. *Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
   </section>
 </main>
 
