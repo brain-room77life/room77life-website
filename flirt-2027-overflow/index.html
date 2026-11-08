@@ -51,11 +51,19 @@
   .page-hero.has-img>video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) grayscale(.15);z-index:0}
   @media(max-width:560px){.compare{overflow-x:auto}.compare table{min-width:460px}}
   /* Overflow hotel photography */
-  .hotel-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,18px);max-width:var(--max);margin:clamp(22px,2.6vw,36px) auto 0}
-  .hotel-gallery figure{margin:0}
-  .hotel-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--color-divider);border-radius:12px}
-  .hotel-gallery figcaption{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--color-muted);margin-top:8px}
-  @media(max-width:760px){.hotel-gallery{grid-template-columns:1fr;gap:16px;max-width:460px}}
+  .hotel-carousel{position:relative;max-width:900px;margin:clamp(22px,2.6vw,36px) auto 0;border:1px solid var(--color-divider);border-radius:14px;overflow:hidden;background:#000}
+  .hotel-carousel .slides{position:relative;aspect-ratio:3/2}
+  .hotel-carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+  .hotel-carousel .slide.on{opacity:1}
+  .hotel-carousel .slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .hotel-carousel .cap{position:absolute;top:14px;left:14px;z-index:3;background:rgba(7,6,7,.6);color:#fff;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:7px 13px;border-radius:999px}
+  .hotel-carousel .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .hotel-carousel .arrow:hover{background:rgba(0,0,0,.78)}
+  .hotel-carousel .arrow.prev{left:12px}.hotel-carousel .arrow.next{right:12px}
+  .hotel-carousel .dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;justify-content:center;gap:8px}
+  .hotel-carousel .dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background .2s,transform .2s}
+  .hotel-carousel .dots button.on{background:#fff;transform:scale(1.3)}
+  @media(hover:none){.hotel-carousel .arrow{display:none}}
   .tier-photo{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--color-divider);margin:0 0 20px}
   .ov-upgrade{position:relative;border:1px solid var(--color-accent);border-radius:14px;overflow:hidden;padding:clamp(26px,4vw,52px);min-height:300px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background-image:linear-gradient(90deg,rgba(7,6,7,.86) 0%,rgba(7,6,7,.5) 45%,rgba(7,6,7,.28) 72%,rgba(7,6,7,.52) 100%),url("/assets/overflow-hotel-oceanview.webp");background-size:cover;background-position:center 42%;background-repeat:no-repeat}
   .ov-upgrade>div{max-width:52ch}
@@ -193,10 +201,21 @@
       <div class="card"><span class="n">02</span><h3>Full event pass included</h3><p>Your package includes full access to the FLIRT takeover next door. 7am &ndash; 3am.</p></div>
       <div class="card"><span class="n">03</span><h3>Eat &amp; drink everywhere</h3><p>All-inclusive at both hotels — food and drinks covered at yours and the main event next door.</p></div>
     </div>
-    <div class="inner hotel-gallery">
-      <figure><img src="/assets/overflow-hotel-garden.webp" alt="Overflow hotel — King-bed Garden Room with ocean view" loading="lazy" width="1280" height="960"><figcaption>King-bed Garden Room</figcaption></figure>
-      <figure><img src="/assets/overflow-hotel-bath.webp" alt="Overflow hotel — renovated ensuite bathroom with double vanity" loading="lazy" width="1280" height="960"><figcaption>Renovated ensuite bath</figcaption></figure>
-      <figure><img src="/assets/overflow-hotel-lobby.webp" alt="Overflow hotel — open-air lobby and lounge" loading="lazy" width="1280" height="960"><figcaption>Lobby &amp; lounge</figcaption></figure>
+    <div class="inner">
+      <div class="hotel-carousel" aria-roledescription="carousel" aria-label="Overflow hotel photos">
+        <div class="slides">
+          <div class="slide on"><img src="/assets/overflow-hotel-garden.webp" alt="Overflow hotel — King-bed Garden Room with ocean view" width="1280" height="960"><span class="cap">King-bed Garden Room</span></div>
+          <div class="slide"><img src="/assets/overflow-hotel-bath.webp" alt="Overflow hotel — renovated ensuite bathroom with double vanity" loading="lazy" width="1280" height="960"><span class="cap">Renovated ensuite bath</span></div>
+          <div class="slide"><img src="/assets/overflow-hotel-lobby.webp" alt="Overflow hotel — open-air lobby and lounge" loading="lazy" width="1280" height="960"><span class="cap">Lobby &amp; lounge</span></div>
+        </div>
+        <button class="arrow prev" type="button" aria-label="Previous photo">&#8249;</button>
+        <button class="arrow next" type="button" aria-label="Next photo">&#8250;</button>
+        <div class="dots" aria-label="Choose photo">
+          <button type="button" class="on" aria-label="Photo 1"></button>
+          <button type="button" aria-label="Photo 2"></button>
+          <button type="button" aria-label="Photo 3"></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -282,6 +301,23 @@
 
 <script>
 (function(){var t=document.querySelector('.nav-toggle'),l=document.getElementById('navlinks');if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);});}})();
+(function(){
+  var c=document.querySelector('.hotel-carousel'); if(!c) return;
+  var slides=[].slice.call(c.querySelectorAll('.slide'));
+  var dots=[].slice.call(c.querySelectorAll('.dots button'));
+  var i=0, timer=null, DUR=4500;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(n){ i=(n+slides.length)%slides.length; slides.forEach(function(s,k){s.classList.toggle('on',k===i);}); dots.forEach(function(d,k){d.classList.toggle('on',k===i);}); }
+  function start(){ if(reduce) return; stop(); timer=setInterval(function(){ go(i+1); }, DUR); }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  dots.forEach(function(d,k){ d.addEventListener('click',function(){ go(k); start(); }); });
+  var pv=c.querySelector('.arrow.prev'), nx=c.querySelector('.arrow.next');
+  if(pv) pv.addEventListener('click',function(){ go(i-1); start(); });
+  if(nx) nx.addEventListener('click',function(){ go(i+1); start(); });
+  c.addEventListener('mouseenter',stop); c.addEventListener('mouseleave',start);
+  c.addEventListener('focusin',stop); c.addEventListener('focusout',start);
+  go(0); start();
+})();
 </script>
 </body>
 </html>
