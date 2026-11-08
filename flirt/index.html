@@ -69,6 +69,13 @@
   @media(max-width:760px){
     .full-exp{background-image:url("/assets/BA-FLIRT-2026.JPG");background-size:100% auto;background-position:top center;padding-top:calc(45.6vw + 24px)}
   }
+  /* Event-pass cards: reuse the "full experience" .card boxes, now clickable */
+  a.card{text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+  a.card:hover{border-color:var(--color-accent);transform:translateY(-3px)}
+  .card-price{display:block;margin-top:14px;font-weight:800;font-size:21px;color:var(--color-accent);line-height:1.15}
+  .card-price small{display:block;font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--color-dim);margin-top:3px}
+  .card-go{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent)}
+  a.card:hover .card-go{text-decoration:underline;text-underline-offset:.2em}
 
 /* Event FAQs restored from the September 15 site backup. */
 .event-faq{border-top:1px solid var(--color-divider);scroll-margin-top:100px}
@@ -141,7 +148,8 @@
       <div class="actions">
         <a class="btn btn-primary" href="/contact/">Join the waitlist
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-        <a class="btn btn-secondary" href="#rooms">Rooms &amp; Rates</a>
+        <a class="btn btn-secondary" href="#passes">Event Passes</a>
+        <a class="btn btn-secondary" href="/flirt-2027-overflow/">Overflow Hotel</a>
       </div>
       <div class="factbar">
         <span>Sold out · Feb 15–20, 2027</span><span>5 nights</span><span>All-inclusive</span><span>Isla Mujeres, MX</span>
@@ -152,20 +160,20 @@
   <!-- TICKER -->
   <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
 
-  <!-- WHAT IT IS -->
-  <section class="section full-exp">
+  <!-- EVENT PASSES -->
+  <section class="section full-exp" id="passes">
     <div class="inner sec-head">
       <div>
-        <p class="eyebrow">The full experience</p>
+        <p class="eyebrow">Event passes</p>
         <h2>Everything included. Nothing ordinary.</h2>
       </div>
-      <p class="lead">One price, five nights, a whole hotel of people you&rsquo;ll want to know. Food, drinks, parties, and the theme nights Room 77 is known for — all part of the package.</p>
+      <p class="lead">The main hotel is sold out — but you can still join the party. Grab an all-inclusive event pass for the day or night, or stay next door at our newly renovated adults-only hotel for the full takeover. Food, top-shelf drinks, parties, and every theme night — all in.</p>
     </div>
     <div class="inner cards">
-      <div class="card"><span class="n">01</span><h3>All-inclusive</h3><p>Meals, top-shelf drinks, and every Room 77 party and daytime event — all in.</p></div>
-      <div class="card"><span class="n">02</span><h3>Complete takeover</h3><p>The entire hotel is ours. No outside guests, no wondering who&rsquo;s who — just our people.</p></div>
-      <div class="card"><span class="n">03</span><h3>Theme nights + DJs</h3><p>The parties our guests book the next event over. Beach nights, dance floors, and the best DJs we&rsquo;ve had.</p></div>
-      <div class="card"><span class="n">04</span><h3>Couples only*</h3><p>A warm, welcoming crowd — first-timers and regulars alike. You&rsquo;ll fit right in.</p></div>
+      <a class="card" href="/flirt-2027-overflow/"><span class="n">01</span><h3>Partial-day pass</h3><p>Join the party for the day (9am&ndash;6pm) or the night (6pm&ndash;3am) — all-inclusive, per couple. No room.</p><span class="card-price">From $100<small>per couple · per day or night</small></span><span class="card-go">Reserve <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+      <a class="card" href="/flirt-2027-overflow/"><span class="n">02</span><h3>Full event pass</h3><p>Day &amp; night access to everything FLIRT — all-inclusive, per couple. Multi-day bundles save.</p><span class="card-price">From $200<small>per couple · per day · 3 &amp; 5-day bundles</small></span><span class="card-go">Reserve <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+      <a class="card" href="/flirt-2027-overflow/"><span class="n">03</span><h3>Pass + hotel · 3 nights</h3><p>Three all-inclusive nights in a King Garden Room at the hotel next door, plus full event access.</p><span class="card-price">$1,860<small>per couple · 3 nights</small></span><span class="card-go">Reserve <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
+      <a class="card" href="/flirt-2027-overflow/"><span class="n">04</span><h3>Pass + hotel · 5 nights</h3><p>Five all-inclusive nights next door in a King Garden Room, plus full event access — the complete takeover.</p><span class="card-price">$3,077<small>per couple · 5 nights</small></span><span class="card-go">Reserve <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a>
     </div>
   </section>
 
@@ -201,49 +209,6 @@
       <img src="/assets/flirt-experience-2.webp" alt="FLIRT 2027 — clothing-optional pools, theme parties and DJs" loading="lazy" width="1000" height="1294">
       <img src="/assets/flirt-experience-3.webp" alt="FLIRT 2027 — all-inclusive amenities, playroom and nightlife" loading="lazy" width="1000" height="1294">
     </div>
-  </section>
-
-  <!-- ROOMS & RATES -->
-  <section class="section" id="rooms" style="border-top:2px solid var(--color-divider)">
-    <div class="inner sec-head">
-      <div>
-        <p class="eyebrow">Rooms &amp; Rates</p>
-        <h2 style="display:inline-flex;align-items:center;flex-wrap:wrap;gap:14px">Your suite awaits. <span style="font-family:var(--font-base,'Lato',sans-serif);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:999px;padding:6px 13px">Sold out</span></h2>
-      </div>
-      <p class="lead">Prices are per room, all-inclusive for two, for all five nights. Ask about the &ldquo;Oversized King Bed&rdquo; — a concept by Room 77. Rates start at <strong style="color:var(--color-text)">$3,077* per room</strong>.</p>
-    </div>
-    <div class="inner">
-      <div class="soldout-rows">
-        <div class="row">
-          <span><span class="r-name">Jr. Suite Ocean View - Oversized King</span><span class="r-meta">430 sq ft · Ocean view · Oversized King</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-        <div class="row">
-          <span><span class="r-name">Jr. Suite Lagoon View - Oversized King</span><span class="r-meta">430 sq ft · Lagoon / garden view · Oversized King</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-        <div class="row">
-          <span><span class="r-name">1 Bedroom Suite - King</span><span class="r-meta">1,230 sq ft · Living · dining · kitchen · pool view</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-        <div class="row">
-          <span><span class="r-name">Jr. Suite Pool View - Oversized King</span><span class="r-meta">430 sq ft · Pool view · Oversized King</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-        <div class="row">
-          <span><span class="r-name">Jr. Suite Pool View - King</span><span class="r-meta">430 sq ft · Pool view · King bed</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-        <div class="row">
-          <span><span class="r-name">Jr. Suite Lagoon View - King</span><span class="r-meta">430 sq ft · Lagoon view · King bed</span></span>
-          <span class="r-cta">Sold out</span>
-        </div>
-      </div>
-    </div>
-    <p style="max-width:var(--max);margin:22px auto 0;font-size:13px;color:var(--color-dim)">Prices are per room, all-inclusive for 2 people, for 5 nights. FLIRT 2027 is sold out — join the waitlist and we&rsquo;ll reach out if a room opens up.</p>
-    <p style="max-width:var(--max);margin:8px auto 0;font-size:13px;color:var(--color-dim)">Transportation to the resort is not included — but we&rsquo;ll give you all the info you need to get there!</p>
-    <p style="max-width:var(--max);margin:8px auto 0;font-size:13px;color:var(--color-dim)">*Couples only. Threesomes+ are welcome upon request and approval (possible surcharge applies).</p>
-    <p style="max-width:var(--max);margin:26px auto 0;text-align:center"><a class="btn btn-primary" href="/contact/">Join the waitlist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></p>
   </section>
 
   <!-- EVENT FAQ -->
