@@ -56,10 +56,10 @@
   .hotel-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--color-divider);border-radius:12px}
   .hotel-gallery figcaption{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--color-muted);margin-top:8px}
   @media(max-width:760px){.hotel-gallery{grid-template-columns:1fr;gap:16px;max-width:460px}}
-  .tier-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px;border:1px solid var(--color-divider);margin:0 0 20px}
-  .ov-upgrade{border:1px solid var(--color-accent);border-radius:14px;padding:clamp(18px,2vw,26px);display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(18px,2.4vw,32px);align-items:center}
-  .ov-upgrade img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px}
-  @media(max-width:680px){.ov-upgrade{grid-template-columns:1fr}}
+  .tier-photo{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--color-divider);margin:0 0 20px}
+  .ov-upgrade{position:relative;border:1px solid var(--color-accent);border-radius:14px;overflow:hidden;padding:clamp(26px,4vw,52px);min-height:300px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background-image:linear-gradient(90deg,rgba(7,6,7,.86) 0%,rgba(7,6,7,.5) 45%,rgba(7,6,7,.28) 72%,rgba(7,6,7,.52) 100%),url("/assets/overflow-hotel-oceanview.webp");background-size:cover;background-position:center 42%;background-repeat:no-repeat}
+  .ov-upgrade>div{max-width:52ch}
+  @media(max-width:680px){.ov-upgrade{min-height:360px;background-image:linear-gradient(180deg,rgba(7,6,7,.48) 0%,rgba(7,6,7,.8) 100%),url("/assets/overflow-hotel-oceanview.webp");background-position:center 35%}}
 </style>
 
 <link rel="canonical" href="https://room77life.com/flirt-2027-overflow/">
@@ -213,7 +213,7 @@
     <div class="tiers">
       <!-- 3 NIGHTS -->
       <div class="tier">
-        <img class="tier-photo" src="/assets/overflow-hotel-garden-green.webp" alt="King-bed Garden Room at the overflow hotel" loading="lazy" width="1280" height="960">
+        <img class="tier-photo" src="/assets/overflow-hotel-garden.webp" alt="King-bed Garden Room at the overflow hotel" loading="lazy" width="1280" height="960">
         <p class="t-eyebrow">3 Nights</p>
         <h3 class="t-name">Garden Room<br>+ All-Inclusive Event Pass</h3>
         <div class="t-price">$1,860<small>per couple · 3 nights · all-inclusive next door</small></div>
@@ -231,7 +231,7 @@
       <!-- 5 NIGHTS -->
       <div class="tier feature">
         <span class="badge">The full event</span>
-        <img class="tier-photo" src="/assets/overflow-hotel-garden-ocean.webp" alt="King-bed Garden Room with ocean view at the overflow hotel" loading="lazy" width="1280" height="960">
+        <img class="tier-photo" src="/assets/overflow-hotel-garden.webp" alt="King-bed Garden Room at the overflow hotel" loading="lazy" width="1280" height="960">
         <p class="t-eyebrow">5 Nights</p>
         <h3 class="t-name">Garden Room<br>+ All-Inclusive Event Pass</h3>
         <div class="t-price">$3,077<small>per couple · 5 nights · all-inclusive next door</small></div>
@@ -249,16 +249,13 @@
 
     <div class="inner" style="margin-top:clamp(28px,3vw,44px)">
       <div class="ov-upgrade">
-        <img src="/assets/overflow-hotel-oceanview.webp" alt="King-bed Ocean View room at the overflow hotel, with balcony and ocean view" loading="lazy" width="1280" height="960">
-        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px">
-          <div>
-            <p class="t-eyebrow" style="margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-muted)">Want the water?</p>
-            <h3 style="font-family:var(--font-display);font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.1;margin:0">Ocean View upgrade available</h3>
-            <p style="color:var(--color-muted);font-size:15px;margin:8px 0 0;max-width:46ch">A King-bed Ocean View room, available for 3 or 5 nights. Ask us for pricing and availability.</p>
-          </div>
-          <a class="btn btn-secondary" href="/contact/?interest=FLIRT%202027%20Waitlist">Ask about the upgrade
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <div>
+          <p class="t-eyebrow" style="margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)">Want the water?</p>
+          <h3 style="font-family:var(--font-display);font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.1;margin:0;color:#fff">Ocean View upgrade available</h3>
+          <p style="color:rgba(255,255,255,.9);font-size:15px;margin:8px 0 0;max-width:46ch">A King-bed Ocean View room, available for 3 or 5 nights. Ask us for pricing and availability.</p>
         </div>
+        <a class="btn btn-secondary" href="/contact/?interest=FLIRT%202027%20Waitlist" style="border-color:#fff;color:#fff">Ask about the upgrade
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
       </div>
     </div>
 
